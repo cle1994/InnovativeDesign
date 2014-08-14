@@ -93,6 +93,7 @@
 
 .side-logo {
   width: 250px;
+  height: 250px;
   padding: 10px 10px;
   background: #0092bf;
   top: 34%;
@@ -148,7 +149,7 @@
     width: 250px;
     &:hover {
       .side-logo {
-        top: 4%;
+        left: -250px;
       }
     }
   }

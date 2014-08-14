@@ -10,7 +10,7 @@ var sass            = require('node-sass');
 var app = express();
 
 // config ------------
-var db = require('./config/db');
+// var db = require('./config/db');
 
 var port = process.env.PORT || 8080;
 

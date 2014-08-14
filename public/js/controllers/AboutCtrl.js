@@ -1,4 +1,4 @@
-angular.module('AboutCtrl', []).controller('AboutController', function($scope) {
+angular.module('AboutCtrl', ['ngTouch']).controller('AboutController', function($scope) {
   $scope.menuClick = function() {
     $('.menu-toggle').toggleClass('toggled');
   }

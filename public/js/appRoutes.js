@@ -12,5 +12,9 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
       templateUrl: 'views/contact.html'
     })
 
+    .when('/request', {
+      templateUrl: 'views/request.html'
+    })
+
   $locationProvider.html5Mode(true);
 }]);

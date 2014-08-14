@@ -1,2 +1,2 @@
-angular.module('ContactCtrl', []).controller('ContactController', function($scope) {
+angular.module('ContactCtrl', ['ngTouch']).controller('ContactController', function($scope) {
 });

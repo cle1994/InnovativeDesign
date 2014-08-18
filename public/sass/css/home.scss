@@ -78,6 +78,15 @@
     overflow: hidden;
     background: #ffffff;
     z-index: 1;
+    @media only screen and (max-width: 1024px) {
+      padding: 100px 30px;
+    }
+    @media only screen and (max-width: 767px) {
+      padding: 110px 30px;
+    }
+    @media only screen and (max-width: 480px) {
+      padding: 120px 20px;
+    }
     .logo-img {
       width: 100%;
       overflow: auto;
@@ -101,6 +110,15 @@
         font-weight: 100;
         color: #0092bf;
         letter-spacing: 0.5em;
+        @media only screen and (max-width: 1024px) {
+          font-size: 5vw;
+        }
+        @media only screen and (max-width: 767px) {
+          font-size: 6vw;
+        }
+        @media only screen and (max-width: 480px) {
+          font-size: 6.5vw;
+        }
         &:nth-child(1) {
           animation: words 1.25s steps(48) 0s 1;
           -o-animation: words 1.25s steps(48) 0s 1;
@@ -149,12 +167,6 @@
         }
       }
     }
-  }
-}
-
-@media only screen and (max-width: 1024px) {
-  .logo-wrapper {
-    width: 100%;
   }
 }
 

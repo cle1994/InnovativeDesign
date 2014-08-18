@@ -1,9 +1,8 @@
-angular.module('AboutCtrl', ['ngTouch']).controller('AboutController', function($scope) {
+innovativeDesign.controller('AboutController', function($scope) {
   $scope.menuClick = function() {
     $('.menu-toggle').toggleClass('toggled');
   }
 
-  
   var fillingBlocks = $('.cd-service').not('.cd-service-divider');
 
   var topValueFillingBlocks = [];
@@ -15,15 +14,16 @@ angular.module('AboutCtrl', ['ngTouch']).controller('AboutController', function(
   fillingBlocks.eq(0).addClass('focus');
 
   $(window).on('scroll', function(){
-    updateOnFocusItem(fillingBlocks.slice(1));
+    // updateOnFocusItem(fillingBlocks.slice(1));
     bodyBackground(topValueFillingBlocks);
   });
 
-  function updateOnFocusItem(items) {
-    items.each(function(){
-      ( $(this).offset().top - $(window).scrollTop() <= $(window).height()/2 ) ? $(this).addClass('focus') : $(this).removeClass('focus');
-    });
-  }
+  // Too Jittery
+  // function updateOnFocusItem(items) {
+  //   items.each(function() {
+  //     ($(this).offset().top - $(window).scrollTop() <= $(window).height()/2 ) ? $(this).addClass('focus') : $(this).removeClass('focus');
+  //   });
+  // }
 
   function bodyBackground(itemsTopValues) {
     var topPosition = $(window).scrollTop() + $(window).height()/2,

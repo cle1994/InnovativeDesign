@@ -7,6 +7,15 @@ innovativeDesign.controller('MainController', function($scope) {
   }
 
   $scope.facebookEvents = [];
+  $scope.fbevent = {}
+  $scope.i = 0;
+
+  setInterval(function() {
+    $scope.i = ($scope.i + 1);
+    $scope.$apply(function() {
+      $scope.fbevent = $scope.facebookEvents[$scope.i];
+    })
+  }, 6000);
 
   window.fbAsyncInit = function() {
     FB.init({
@@ -20,7 +29,7 @@ innovativeDesign.controller('MainController', function($scope) {
       function(response) {
         $scope.$apply(function() {
           $scope.facebookEvents = response.data;
-          console.log($scope.facebookEvents);
+          $scope.fbevent = $scope.facebookEvents[$scope.i];
         })
       }
     )

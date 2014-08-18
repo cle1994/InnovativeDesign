@@ -7,15 +7,15 @@ innovativeDesign.controller('MainController', function($scope) {
   }
 
   $scope.facebookEvents = [];
-  $scope.fbevent = {}
+  $scope.fbevent;
   $scope.i = 0;
 
   setInterval(function() {
-    $scope.i = ($scope.i + 1);
+    $scope.i = ($scope.i + 1) % $scope.facebookEvents.length;
     $scope.$apply(function() {
       $scope.fbevent = $scope.facebookEvents[$scope.i];
     })
-  }, 6000);
+  }, 5000);
 
   window.fbAsyncInit = function() {
     FB.init({

@@ -56,6 +56,7 @@ innovativeDesign.controller('HomeController', function($scope, HomeService) {
     setInterval(function() {
       i = (i + 1) % facebookEvents.length;
       $scope.$apply(function() {
+        console.log($scope.eventShow);
         $scope.fbevent = facebookEvents[i];
         $scope.fbname = $scope.fbevent.name;
         $scope.fbday = getDate($scope.fbevent.start_time.substring(0,10));
@@ -73,9 +74,7 @@ innovativeDesign.controller('HomeController', function($scope, HomeService) {
       $scope.fbday = getDate($scope.fbevent.start_time.substring(0,10));
       $scope.fbtime = getTime($scope.fbevent.start_time.substring(11,16));
       $scope.fblocation = $scope.fbevent.location;
-    }
-    interval();
-    if ($scope.fbevent) {
+      interval();
       $scope.eventShow = true;
     } else {
       $scope.eventShow = false;
@@ -94,6 +93,7 @@ innovativeDesign.controller('HomeController', function($scope, HomeService) {
           $scope.fbtime = getTime($scope.fbevent.start_time.substring(11,16));
           $scope.fblocation = $scope.fbevent.location;
           $scope.eventShow = true;
+          interval();
         })
       }
     )

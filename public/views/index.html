@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <base href="/">
-    
+
     <title>Innovative Design</title>
 
     <!-- CSS -->
@@ -27,12 +27,23 @@
     <script src="libs/angular-touch/angular-touch.min.js"></script>
     <script src="libs/angular-animate/angular-animate.min.js"></script>
 
+    <!-- Moment -->
+    <script src="libs/moment/min/moment.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- DateTime -->
+    <script src="libs/datetime/datetime.min.js"></script>
+    <link rel="stylesheet" href="libs/datetime/datetime.min.css">
+
     <!-- ANGULAR CUSTOM -->
     <script src="js/app.js"></script>
     <script src="js/appRoutes.js"></script>
     <script src="js/controllers/MainCtrl.js"></script>
     <script src="js/controllers/HomeCtrl.js"></script>
     <script src="js/controllers/AboutCtrl.js"></script>
+    <script src="js/controllers/RequestCtrl.js"></script>
     <script src="js/controllers/ContactCtrl.js"></script>
     <script src="js/services/HomeService.js"></script>
   </head>
@@ -57,7 +68,7 @@
         <div class="container-fluid">
           <div class="row">
             <div class="animate-view col-md-12 no-padding" data-ng-view autoscroll="true">
-              
+
             </div>
           </div>
         </div>

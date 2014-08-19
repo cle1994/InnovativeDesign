@@ -56,7 +56,6 @@ innovativeDesign.controller('HomeController', function($scope, HomeService) {
     setInterval(function() {
       i = (i + 1) % facebookEvents.length;
       $scope.$apply(function() {
-        console.log($scope.eventShow);
         $scope.fbevent = facebookEvents[i];
         $scope.fbname = $scope.fbevent.name;
         $scope.fbday = getDate($scope.fbevent.start_time.substring(0,10));

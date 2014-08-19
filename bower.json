@@ -9,6 +9,6 @@
     "angular-route": "latest",
     "angular-touch": "latest",
     "angular-animate": "latest",
-    "angular-facebook": "latest"
+    "moment": "latest"
   }
 }

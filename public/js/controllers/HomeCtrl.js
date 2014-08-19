@@ -75,7 +75,11 @@ innovativeDesign.controller('HomeController', function($scope, HomeService) {
       $scope.fblocation = $scope.fbevent.location;
     }
     interval();
-    $scope.eventShow = true;
+    if ($scope.fbevent) {
+      $scope.eventShow = true;
+    } else {
+      $scope.eventShow = false;
+    }
   }
   var fbcall = function() {
     FB.api(

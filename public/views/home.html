@@ -15,7 +15,7 @@
     </div>
   </div>
   <div class="events">
-    <div data-ng-show="eventShow">{{ fbevent.name }} on {{ fbevent.start_time }} at {{ fbevent.location }}</div>
+    <a href="http://facebook.com/{{ fbevent.id }}" target="_blank" data-ng-show="eventShow">{{ fbname }} on {{ fbday }} at {{ fbtime }} in {{ fblocation }}</a>
   </div>
   <div class="portfolio col-md-12 no-padding">
     <div class="image-container">

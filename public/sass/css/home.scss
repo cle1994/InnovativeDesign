@@ -182,6 +182,12 @@
   color: #ffffff;
   padding-left: 10px;
   overflow: hidden;
+  a {
+    color: #ffffff;
+    &:hover {
+      color: #eeeeee;
+    }
+  }
 }
 
 /*

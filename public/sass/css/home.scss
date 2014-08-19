@@ -176,15 +176,27 @@
 .events {
   height: 26px;
   width: 100%;
-  line-height: 26px;
+  line-height: 24px;
   font-size: 14px;
   background: #c5c5c5;
   color: #ffffff;
   padding-left: 10px;
   overflow: hidden;
+  img {
+    display: inline-block;
+    width: 20px;
+    line-height: 20px;
+    margin-right: 6px;
+  }
   a {
+    display: inline-block;
     color: #ffffff;
-    &:hover {
+  }
+  &:hover {
+    img {
+      opacity: 0.7;
+    }
+    a {
       color: #eeeeee;
     }
   }

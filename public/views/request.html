@@ -1,5 +1,5 @@
 <div class="container-fluid" data-ng-controller="RequestController">
-  <div class="intro pager" data-ng-show="!submitted">
+  <div class="intro pager" data-ng-show="!submitted && !loading">
     <h3>Project Request Form</h3>
   </div>
   <form name="request" class="request" data-ng-show="!submitted">
@@ -64,9 +64,15 @@
       </div>
     </div>
   </form>
-  <div data-ng-show="submitted" class="sent pager">
+  <div data-ng-show="loading" class="loader">
+    <div class="pager">
+      <img src="../img/loading.gif" alt="">
+    </div>
+  </div>
+  <div data-ng-show="submitted && !loading" class="sent pager">
     <h3>Your request has been sent!</h3>
     <p>If you have any questions or changes don't be afraid to <a href="mailto:innovativedesignatcal@gmail.com">email us</a>.</p>
     <p>If you'd like to contact a specific officer, please visit our <a href="/contact">contact page</a>.</p>
+    <p><a href="/">Return Home</a></p>
   </div>
 </div>

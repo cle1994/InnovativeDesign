@@ -18,35 +18,26 @@ innovativeDesign.controller('RequestController', function($scope) {
   // Sketch = entry.1974570456
 
   $scope.googleSheet = function() {
-    var url = '';
-    if ($scope.sketch) {
-      url = $scope.sketch;
-    }
+    var serializedData = $('.request').serialize();
+    $scope.loading = true;
+    $scope.submitted = true;
+
     $.ajax({
-      crossDomain: true,
-      url: 'https://docs.google.com/forms/d/1Zf9M66jjuY7yJ3PTKJP4oUDwXcvri-pS7I2LEltPSJQ/formResponse',
-      data: {
-        'entry.974201369': $scope.serviceType,
-        'entry.1441180541': $scope.orgName,
-        'entry.1340590017': $scope.contactName,
-        'entry.1207355047': $scope.contactNum,
-        'entry.707655010': $scope.contactEmail,
-        'entry.1750538565': $scope.orgInfo,
-        'entry.772251149': $scope.orgType,
-        'entry.1573531540': $scope.addInfo,
-        'entry.1166413721': $scope.date,
-        'entry.1974570456': $scope.sketch
-      },
+      url: 'https://script.google.com/macros/s/AKfycbzr86BBj3C_i8m2dm_Erdsy7-T-afJAdd4WcLDP8uKWVjOoYTFg/exec',
       type: 'POST',
-      dataType: 'xml',
-      statusCode: {
-        0: function() {
-          $scope.submitted = true;
-        },
-        200: function() {
-          $scope.submitted = true;
-        }
-      }
+      data: serializedData
+    })
+    .done(function() {
+      $scope.$apply(function() {
+        $scope.submitted = true;
+        $scope.loading = false;
+      })
+    })
+    .fail(function() {
+      $scope.$apply(function() {
+        $scope.submitted = true;
+        $scope.loading = false;
+      })
     });
   };
 });

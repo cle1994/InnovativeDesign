@@ -1,0 +1,55 @@
+.request {
+  margin-top: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 30px;
+  color: #777777;
+  .form-group {
+    label {
+      font-size: 15px;
+      font-weight: 300;
+    }
+    input {
+      &::-webkit-input-placeholder {
+        color: #bbbbbb;
+      }
+      &::-moz-placeholder {
+        color: #bbbbbb;
+      }
+      &:-ms-input-placeholder {
+        color: #bbbbbb;
+      }
+    }
+    textarea {
+      &::-webkit-input-placeholder {
+        color: #bbbbbb;
+      }
+      &::-moz-placeholder {
+        color: #bbbbbb;
+      }
+      &:-ms-input-placeholder {
+        color: #bbbbbb;
+      }
+    }
+    .glyphicon {
+      font-size: 14px;
+    }
+    .glyphicon-exclamation-sign {
+      color: #c83353;
+    }
+
+    .glyphicon-certificate {
+      color: #e7b03a;
+    }
+    .form-control-feedback {
+      top: 26px;
+      right: 15px;
+      &.selector {
+        right: 25px;
+      }
+    }
+  }
+  .margin-bot {
+    margin-bottom: 30px;
+  }
+}

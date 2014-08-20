@@ -1,1 +1,1 @@
-var innovativeDesign = angular.module('innovativeDesign', ['ngRoute', 'ngTouch', 'ngAnimate']);
+var innovativeDesign = angular.module('innovativeDesign', ['ngRoute', 'ngTouch']);

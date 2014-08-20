@@ -8,7 +8,6 @@
     "angular": "latest",
     "angular-route": "latest",
     "angular-touch": "latest",
-    "angular-animate": "latest",
     "moment": "latest"
   }
 }

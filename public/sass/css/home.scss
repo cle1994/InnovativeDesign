@@ -69,15 +69,19 @@
 .logo-header {
   background: #ffffff;
   z-index: 2;
+  height: 82vh;
   .logo-wrapper {
     position: relative;
-    height: 50vh;
     width: 90%;
-    margin: 0 auto;
+    margin: 0px auto;
     padding: 100px;
     overflow: hidden;
     background: #ffffff;
     z-index: 1;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
     @media only screen and (max-width: 1024px) {
       padding: 100px 30px;
     }
@@ -180,7 +184,10 @@
   background: #c5c5c5;
   color: #ffffff;
   padding-left: 8px;
-  position: relative;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  z-index: 999999999999;
   overflow: hidden;
   img {
     position: absolute;
@@ -208,9 +215,83 @@
  * Portfolio
  */
 
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content; 
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  } 
+}
+@mixin animation($animation) {
+  -webkit-animation: #{$animation};
+  -moz-animation: #{$animation};
+  -ms-animation: #{$animation};
+  animation: #{$animation};
+}
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+  -moz-transform: $transform;
+  -ms-transform: $transform;
+  transform: $transform;
+}
+
+@include keyframes(bounce) {
+  0%, 20%, 50%, 80%, 100% {
+    @include transform(translateY(0));
+  }
+  40% {
+    @include transform(translateY(-30px));
+  }
+  60% {
+    @include transform(translateY(-15px));
+  }
+}
+
+.arrow-down {
+  font-size: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  @include animation(bounce 2s infinite);
+ }
+
 .image-container {
   background: #ffffff;
+  text-align: center;
   img {
-    width: 100%;
+    margin: 50px auto;
+    &.width-20 {
+      width: 20%;
+    }
+    &.width-30 {
+      width: 30%;
+    }
+    &.width-40 {
+      width: 40%;
+    }
+    &.width-50 {
+      width: 50%;
+    }
+    &.width-60 {
+      width: 60%;
+    }
+    &.width-70 {
+      width: 70%;
+    }
+    &.width-80 {
+      width: 80%;
+    }
+    &.width-90 {
+      width: 90%;
+    }
+    &.width-100 {
+      width: 100%;
+    }
   }
 }

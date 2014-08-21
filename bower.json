@@ -8,6 +8,7 @@
     "angular": "latest",
     "angular-route": "latest",
     "angular-touch": "latest",
-    "moment": "latest"
+    "moment": "latest",
+    "font-awesome": "4.1.x"
   }
 }

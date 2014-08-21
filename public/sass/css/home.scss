@@ -267,8 +267,48 @@
   .center-col {
     text-align: center;
   }
-  img {
+  .background-green {
     width: 100%;
-    margin: 15px 0px;
+    background: url('../img/portfolio/Marketing/panel.png');
+    background-size: cover;
+    background-position: center;
+    height: 350px;
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 5px #aaaaaa;
+    -moz-box-shadow: 0px 0px 5px #aaaaaa;
+    -webkit-box-shadow: 0px 0px 5px #aaaaaa;
+  }
+  .background-red {
+    width: 100%;
+    background: url('../img/portfolio/Marketing/bear.png');
+    background-size: cover;
+    background-position: center;
+    height: 350px;
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 5px #aaaaaa;
+    -moz-box-shadow: 0px 0px 5px #aaaaaa;
+    -webkit-box-shadow: 0px 0px 5px #aaaaaa;
+  }
+  .background-blue {
+    width: 100%;
+    background: url('../img/portfolio/Marketing/obsession.png');
+    background-size: cover;
+    background-position: center;
+    height: 350px;
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 5px #aaaaaa;
+    -moz-box-shadow: 0px 0px 5px #aaaaaa;
+    -webkit-box-shadow: 0px 0px 5px #aaaaaa;
+  }
+  .background-yellow {
+    width: 100%;
+    background: url('../img/portfolio/Marketing/cards.png');
+    background-size: cover;
+    background-position: center;
+    height: 350px;
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 5px #aaaaaa;
+    -moz-box-shadow: 0px 0px 5px #aaaaaa;
+    -webkit-box-shadow: 0px 0px 5px #aaaaaa;
   }
 }

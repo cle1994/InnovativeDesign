@@ -8,6 +8,12 @@ innovativeDesign.controller('HomeController', function($scope, HomeService) {
   $scope.fbtime;
   $scope.fblocation;
 
+  $scope.scrollPortfolio = function() {
+    $('html, body').animate({
+        scrollTop: $("div.portfolio").offset().top
+    }, 1000); 
+  }
+
   var getDate = function(date) {
     var arr = date.split('-');
     var month;

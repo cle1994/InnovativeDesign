@@ -259,7 +259,8 @@
   margin-top: 50px;
   margin-bottom: 50px;
   @include animation(bounce 2s infinite);
- }
+  cursor: pointer;
+}
 
 .image-container {
   background: #ffffff;

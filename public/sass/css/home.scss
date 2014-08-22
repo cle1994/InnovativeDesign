@@ -1,74 +1,138 @@
+/*
+ * Sass Mixins and Variables
+ */
+
 $primary-blue: #0592BF;
 $primary-red: #C83353;
 $primary-yellow: #E7B03A;
 $primary-black: #252930;
 
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  background-clip: padding-box; /* Stops background leaking */
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); /* IE8 */
+}
+
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin abs-pos ($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  position: absolute;
+}
+
+@mixin inline-block() {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+  *display: inline
+}
+
+@mixin font-size($sizeValue: 14) {
+  font-size: $sizeValue + px;
+  font-size: (0.125 * $sizeValue) + rem;
+}
+
+@mixin line-height($heightValue: 14 ){
+  line-height: $heightValue + px; //fallback for old browsers
+  line-height: (0.125 * $heightValue) + rem;
+}
+
+@mixin animation($animate...) {
+  $max: length($animate);
+  $animations: '';
+
+  @for $i from 1 through $max {
+    $animations: #{$animations + nth($animate, $i)};
+
+    @if $i < $max {
+      $animations: #{$animations + ", "};
+    }
+  }
+  -webkit-animation: $animations;
+  -moz-animation: $animations;
+  -o-animation: $animations;
+  animation: $animations;
+}
+
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+  -moz-transform: $transform;
+  -ms-transform: $transform;
+  transform: $transform;
+}
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin horizontal-align {
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
 /*
  * Header and Animation for Home Page
  */
-@keyframes words {
-  0% { opacity: 0; width: 0; }
-  2% { opacity: 1; }
-  95% { opacity: 1; width: 100%;}
-  100% { opacity: 0; }
-}
-@-webkit-keyframes words {
+
+@include keyframes(words) {
   0% { opacity: 0; width: 0; }
   2% { opacity: 1; }
   95% { opacity: 1; width: 100%;}
   100% { opacity: 0; }
 }
 
-@keyframes wordsLast {
-  0% { opacity: 0; width: 0; }
-  2% { opacity: 1; }
-  100% { opacity: 1; width: 100%;}
-}
-@-webkit-keyframes wordsLast {
+@include keyframes(lastWord) {
   0% { opacity: 0; width: 0; }
   2% { opacity: 1; }
   100% { opacity: 1; width: 100%;}
 }
 
-@keyframes cursor {
-  0% {
-    opacity: 0;
-  }
-  20% { 
-    opacity: 1;
-  }
-  40% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@-webkit-keyframes cursor {
-  0% {
-    opacity: 0;
-  }
-  20% { 
-    opacity: 1;
-  }
-  40% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
+@include keyframes(cursor) {
+  0% { opacity: 0; }
+  20%, 40%, 60% { opacity: 1; }
+  80%, 100% { opacity: 0; }
 }
 
 .logo-header {
@@ -102,7 +166,7 @@ $primary-black: #252930;
       width: 100%;
       overflow: auto;
       .logotxt {
-        width: 90%;
+        width: 100%;
         z-index: 1;
         float: left;
         text-align: left;
@@ -161,10 +225,10 @@ $primary-black: #252930;
           -webkit-animation: words 1.25s steps(48) 5s 1;
         }
         &:nth-child(6) {
-          animation: wordsLast 1.25s steps(48) 6.25s 1;
-          -o-animation: wordsLast 1.25s steps(48) 6.25s 1;
-          -moz-animation: wordsLast 1.25s steps(48) 6.25s 1;
-          -webkit-animation: wordsLast 1.25s steps(48) 6.25s 1;
+          animation: lastWord 1.25s steps(48) 6.25s 1;
+          -o-animation: lastWord 1.25s steps(48) 6.25s 1;
+          -moz-animation: lastWord 1.25s steps(48) 6.25s 1;
+          -webkit-animation: lastWord 1.25s steps(48) 6.25s 1;
           animation-fill-mode: forwards;
           -o-animation-fill-mode: forwards;
           -moz-animation-fill-mode: forwards;
@@ -221,33 +285,6 @@ $primary-black: #252930;
 /*
  * Portfolio
  */
-
-@mixin keyframes($name) {
-  @-webkit-keyframes #{$name} {
-    @content; 
-  }
-  @-moz-keyframes #{$name} {
-    @content;
-  }
-  @-ms-keyframes #{$name} {
-    @content;
-  }
-  @keyframes #{$name} {
-    @content;
-  } 
-}
-@mixin animation($animation) {
-  -webkit-animation: #{$animation};
-  -moz-animation: #{$animation};
-  -ms-animation: #{$animation};
-  animation: #{$animation};
-}
-@mixin transform($transform) {
-  -webkit-transform: $transform;
-  -moz-transform: $transform;
-  -ms-transform: $transform;
-  transform: $transform;
-}
 
 @include keyframes(bounce) {
   0%, 20%, 50%, 80%, 100% {

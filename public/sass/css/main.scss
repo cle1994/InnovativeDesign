@@ -1,3 +1,8 @@
+$primary-blue: #0592BF;
+$primary-red: #C83353;
+$primary-yellow: #E7B03A;
+$primary-black: #252930;
+
 html * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -6,7 +11,7 @@ html * {
 body {
   font-size: 100%;
   font-family: sans-serif;
-  color: #888888;
+  color: $primary-black;
 }
 
 a {
@@ -24,17 +29,17 @@ a {
 
 .footer {
   background: #ffffff;
-  height: 50vh;
+  height: 50%;
 }
 .footer-40 {
   background: #ffffff;
-  height: 40vh;
+  height: 40%;
 }
 .footer-20 {
   background: #ffffff;
-  height: 20vh;
+  height: 20%;
 }
 .footer-10 {
   background: #ffffff;
-  height: 10vh;
+  height: 10%;
 }

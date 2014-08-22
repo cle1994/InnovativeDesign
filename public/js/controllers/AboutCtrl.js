@@ -3,7 +3,7 @@ innovativeDesign.controller('AboutController', function($scope) {
     $('.menu-toggle').toggleClass('toggled');
   }
 
-  var fillingBlocks = $('.cd-service').not('.cd-service-divider');
+  var fillingBlocks = $('.fill-box').not('.fill-box-divider');
 
   var topValueFillingBlocks = [];
   fillingBlocks.each(function(index){

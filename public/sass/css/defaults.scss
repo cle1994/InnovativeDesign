@@ -1,3 +1,14 @@
+$primary-blue: #0592BF;
+$primary-red: #C83353;
+$primary-yellow: #E7B03A;
+$primary-black: #252930;
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 .no-padding {
   padding: 0px;
 }

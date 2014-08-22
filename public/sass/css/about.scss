@@ -1,13 +1,18 @@
+$primary-blue: #0592BF;
+$primary-red: #C83353;
+$primary-yellow: #E7B03A;
+$primary-black: #252930;
+
 /*
  * Icon filling animation
  */
 
-.cd-container {
+.fill-container {
   width: 100%;
   margin: 0 auto;
   padding: 0px;
 }
-.cd-container::after {
+.fill-container::after {
   /* clearfix */
   content: '';
   display: table;
@@ -36,7 +41,7 @@ html, body {
 
 .about-wrapper::before {
   top: 0;
-  background-color: #0092bf;
+  background-color: $primary-blue;
   -webkit-transition: background-color 0.8s;
   -moz-transition: background-color 0.8s;
   transition: background-color 0.8s;
@@ -47,21 +52,30 @@ html, body {
   background-color: #cccccc;
 }
 
+.about-wrapper {
+  .foot {
+    position: relative;
+    padding-bottom: 50%;
+    background-color: #ffffff;
+    z-index: 3;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .about-wrapper.new-color-1::before {
-    background-color: #e7b03a;
+    background-color: $primary-red;
   }
 
   .about-wrapper.new-color-2::before {
-    background-color: #c83353;
+    background-color: $primary-yellow;
   }
 
   .about-wrapper.new-color-3::before {
-    background-color: #0092bf;
+    background-color: $primary-blue;
   }
 
   .about-wrapper.new-color-4::before {
-    background-color: #c83353;
+    background-color: $primary-red;
   }
 
   .about-wrapper.new-color-5::before {
@@ -71,14 +85,14 @@ html, body {
 
 header {
   position: relative;
-  color: #888888;
+  color: lighten($primary-black, 25%);
   background-color: #ffffff;
   z-index: 2;
   padding: 3.5em 2.5em;
   font-size: 18px;
   line-height: 32px;
   font-weight: 300;
-  min-height: 50vh;
+  min-height: 50%;
 }
 
 @media only screen and (min-width: 480px) {
@@ -89,70 +103,72 @@ header {
   }
 }
 
-.cd-service {
+.fill-box {
   position: relative;
   z-index: 2;
   min-height: 60px;
   margin-left: 100px;
   background: #ffffff;
-  color: #888888;
+  color: lighten($primary-black, 25%);
   padding: 1em 2em 4em 1em;
 }
-.cd-service::before, .cd-service::after {
+.fill-box::before, .fill-box::after {
   content: '';
   position: absolute;
   width: 100px;
   right: 100%;
   z-index: 2;
 }
-.cd-service::before {
+.fill-box::before {
   top: 0;
   height: 60px;
   background-repeat: no-repeat;
 }
-.cd-service::after {
+.fill-box::after {
   top: 60px;
   bottom: 0;
   background-image: url("../img/cd-pattern-small.svg");
   background-repeat: repeat-y;
 }
-.cd-service.cd-service-divider::after {
+.fill-box.fill-box-divider::after {
   top: 0;
 }
-.cd-service.cd-service-divider:last-child {
+.fill-box.fill-box-divider:last-child {
   display: none;
 }
-.cd-service.cd-service-1::before {
+.fill-box.fill-box-1::before {
   background-image: url("../img/cd-icon-1-small.svg");
 }
-.cd-service.cd-service-2::before {
+.fill-box.fill-box-2::before {
   background-image: url("../img/cd-icon-2-small.svg");
 }
-.cd-service.cd-service-3::before {
+.fill-box.fill-box-3::before {
   background-image: url("../img/cd-icon-3-small.svg");
 }
-.cd-service.cd-service-4::before {
+.fill-box.fill-box-4::before {
   background-image: url("../img/cd-icon-4-small.svg");
 }
-.cd-service.cd-service-5::before {
+.fill-box.fill-box-5::before {
   background-image: url("../img/cd-icon-5-small.svg");
 }
-.cd-service.cd-service-6::before {
+.fill-box.fill-box-6::before {
   background-image: url("../img/cd-icon-6-small.svg");
 }
-.cd-service h2 {
+.fill-box h2 {
   text-transform: uppercase;
   margin-bottom: 1.5em;
   font-size: 26px;
   font-family: sans-serif;
   font-weight: 300;
+  color: lighten($primary-black, 25%);
 }
-.cd-service p {
+.fill-box p {
   font-size: 20px;
   line-height: 20px;
   font-family: sans-serif;
   font-weight: 300;
-  line-height: 28px
+  line-height: 28px;
+  color: lighten($primary-black, 25%);
 }
 @media only screen and (min-width: 1170px) {
   header {
@@ -160,70 +176,63 @@ header {
     font-size: 30px;
     line-height: 56px;
   }
-  .cd-service {
+  .fill-box {
     min-height: 525px;
     margin-left: 420px;
     padding: 6em 16em 6em 2em;
   }
-  .cd-service::before, .cd-service::after {
+  .fill-box::before, .fill-box::after {
     width: 420px;
   }
-  .cd-service::before {
+  .fill-box::before {
     height: 325px;
   }
-  .cd-service::after {
+  .fill-box::after {
     top: 325px;
     background-image: url("../img/cd-pattern-large.svg");
   }
-  .cd-service.cd-service-divider:first-child, .cd-service.cd-service-divider:last-child {
+  .fill-box.fill-box-divider:first-child, .fill-box.fill-box-divider:last-child {
     min-height: 50px;
     padding: 0;
   }
-  .cd-service.cd-service-divider:last-child {
+  .fill-box.fill-box-divider:last-child {
     display: none;
   }
-  .cd-service.cd-service-1::before {
+  .fill-box.fill-box-1::before {
     background-image: url("../img/cd-icon-1-large.svg");
   }
-  .cd-service.cd-service-2::before {
+  .fill-box.fill-box-2::before {
     background-image: url("../img/cd-icon-2-large.svg");
   }
-  .cd-service.cd-service-3::before {
+  .fill-box.fill-box-3::before {
     background-image: url("../img/cd-icon-3-large.svg");
   }
-  .cd-service.cd-service-4::before {
+  .fill-box.fill-box-4::before {
     background-image: url("../img/cd-icon-4-large.svg");
   }
-  .cd-service.cd-service-5::before {
+  .fill-box.fill-box-5::before {
     background-image: url("../img/cd-icon-5-large.svg");
   }
-  .cd-service.cd-service-6::before {
+  .fill-box.fill-box-6::before {
     background-image: url("../img/cd-icon-6-large.svg");
   }
-  .cd-service h2, .cd-service p {
-    color: #888888;
+  .fill-box h2, .fill-box p {
+    color: lighten($primary-black, 25%);
     -webkit-transition: color, 0.5s;
     -moz-transition: color, 0.5s;
     transition: color, 0.5s;
   }
-  .cd-service h2 {
+  .fill-box h2 {
     font-size: 30px;
   }
-  .cd-service p {
+  .fill-box p {
     font-size: 24px;
     line-height: 36px;
   }
-  .cd-service.focus h2 {
-    color: #888888;
+  .fill-box.focus h2 {
+    color: lighten($primary-black, 25%);
   }
-  .cd-service.focus p {
-    color: #888888;
+  .fill-box.focus p {
+    color: lighten($primary-black, 25%);
   }
-}
-
-footer {
-  position: relative;
-  height: 50%;
-  background: #ffffff;
-  z-index: 2;
 }

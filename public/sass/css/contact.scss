@@ -1,8 +1,14 @@
+$primary-blue: #0592BF;
+$primary-red: #C83353;
+$primary-yellow: #E7B03A;
+$primary-black: #252930;
+
 .contact-wrapper {
   .container-fluid {
     margin-top: 50px;
     h3 {
       text-align: center;
+      color: lighten($primary-black, 25%);
     }
     .key-officer {
       text-align: center;
@@ -11,6 +17,7 @@
       margin-bottom: 20px;
       padding-right: 0px;
       padding-left: 0px;
+      color: lighten($primary-black, 35%);
       .img {
         width: 70%;
         border-radius: 50%;
@@ -47,7 +54,7 @@
           .overlay {
             img {
               opacity: 0.2;
-              border: 2px solid #cccccc;
+              border: 2px solid lighten($primary-black, 25%);
               border-radius: 50%;
             }
           }
@@ -60,7 +67,8 @@
       margin-top: 20px;
       margin-bottom: 20px;
       padding-left: 0px;
-      padding-right: 0px; 
+      padding-right: 0px;
+      color: lighten($primary-black, 35%);
       .img {
         width: 66%;
         border-radius: 50%;
@@ -97,7 +105,7 @@
           .overlay {
             img {
               opacity: 0.2;
-              border: 2px solid #cccccc;
+              border: 2px solid lighten($primary-black, 25%);
               border-radius: 50%;
             }
           }

@@ -10,6 +10,11 @@
  * Github: cle1994
  */
 
+$primary-blue: #0592BF;
+$primary-red: #C83353;
+$primary-yellow: #E7B03A;
+$primary-black: #252930;
+
 #wrapper {
   padding-left: 0px;
   -webkit-transition: all 0.4s ease 0s;
@@ -26,7 +31,7 @@
   height: 100%;
   margin-left: -250px;
   overflow-y: auto;
-  background: #0092bf;
+  background: $primary-blue;
   -webkit-transition: all 0.4s ease 0s;
   -moz-transition: all 0.4s ease 0s;
   -o-transition: all 0.4s ease 0s;
@@ -51,8 +56,13 @@
 }
 
 .sidebar-nav {
-  position: absolute;
-  top: 32%;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-60%);
+  -moz-transform: translateY(-60%);
+  -ms-transform: translateY(-60%);
+  -o-transform: translateY(-60%);
+  transform: translateY(-60%);
   width: 230px;
   margin: 0px;
   margin-left: 15px;
@@ -93,11 +103,11 @@
 
 .side-logo {
   width: 250px;
-  height: 250px;
+  height: 100vh;
   padding: 10px 10px;
-  background: #0092bf;
-  top: 34%;
-  left: 0px;
+  background: $primary-blue;
+  top: 0px;
+  left: 0px; 
   position: fixed;
   z-index: 10000;
   transition: left 0.4s, top 0.3s;
@@ -106,6 +116,13 @@
   -webkit-transition: left 0.4s, top 0.3s;
   img {
     width: 100%;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
   }
 }
 

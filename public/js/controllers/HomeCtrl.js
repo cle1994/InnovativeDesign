@@ -37,7 +37,7 @@ innovativeDesign.controller('HomeController', function($scope, HomeService) {
     '../img/portfolio/Photo/bb1.jpg': { tier: $scope.photo, col: [4, 6] },
     '../img/portfolio/Photo/bb2.jpg': { tier: $scope.photo, col: [4, 6] },
     '../img/portfolio/Photo/bw.jpg': { tier: $scope.photo, col: [6, 5] },
-    '../img/portfolio/Photo/elizabeth.jpg': { tier: $scope.photo, col: [6, 7] },
+    '../img/portfolio/Photo/Elizabeth.jpg': { tier: $scope.photo, col: [6, 7] },
     '../img/portfolio/Photo/group.jpg': { tier: $scope.photo, col: [7, 7] },
     '../img/portfolio/Photo/isco.jpg': { tier: $scope.photo, col: [5, 5] },
     '../img/portfolio/Photo/jordan.jpg': { tier: $scope.photo, col: [5, 6] },

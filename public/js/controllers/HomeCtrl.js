@@ -8,6 +8,44 @@ innovativeDesign.controller('HomeController', function($scope, HomeService) {
   $scope.fbtime;
   $scope.fblocation;
 
+  $scope.marketing = true;
+  $scope.blue = true;
+  $scope.gold = true;
+  $scope.photo = true;
+  $scope.web = true;
+
+  $scope.data = {
+    '../img/portfolio/Blue/chemisense.png': { tier: $scope.blue, col: [4, 7] },
+    '../img/portfolio/Blue/markhor.png': { tier: $scope.blue, col: [4, 5] },
+    '../img/portfolio/Blue/transport.png': { tier: $scope.blue, col: [4, 6] },
+    '../img/portfolio/Blue/transport2.png': { tier: $scope.blue, col: [6, 6] },
+    '../img/portfolio/Gold/bbjj.png': { tier: $scope.gold, col: [3, 5] },
+    '../img/portfolio/Gold/bbjj2.png': { tier: $scope.gold, col: [3, 7] },
+    '../img/portfolio/Gold/che.png': { tier: $scope.gold, col: [4, 6] },
+    '../img/portfolio/Gold/paws.png': { tier: $scope.gold, col: [3, 6] },
+    '../img/portfolio/Gold/paws2.png': { tier: $scope.gold, col: [5, 4] },
+    '../img/portfolio/Gold/smartbod.png': { tier: $scope.gold, col: [6, 8] },
+    '../img/portfolio/Gold/smartbod2.png': { tier: $scope.gold, col: [6, 8] },
+    '../img/portfolio/Marketing/bear.png': { tier: $scope.marketing, col: [4, 4] },
+    '../img/portfolio/Marketing/card1.png': { tier: $scope.marketing, col: [4, 4] },
+    '../img/portfolio/Marketing/card2.png': { tier: $scope.marketing, col: [4, 4] },
+    '../img/portfolio/Marketing/card3.png': { tier: $scope.marketing, col: [5, 4] },
+    '../img/portfolio/Marketing/obsession.png': { tier: $scope.marketing, col: [7, 6] },
+    '../img/portfolio/Marketing/panel.png': { tier: $scope.marketing, col: [7, 6] },
+    '../img/portfolio/Marketing/rgb.png': { tier: $scope.marketing, col: [5, 4] },
+    '../img/portfolio/Marketing/valentine1.png': { tier: $scope.marketing, col: [4, 8] },
+    '../img/portfolio/Photo/bb1.jpg': { tier: $scope.photo, col: [4, 6] },
+    '../img/portfolio/Photo/bb2.jpg': { tier: $scope.photo, col: [4, 6] },
+    '../img/portfolio/Photo/bw.jpg': { tier: $scope.photo, col: [6, 5] },
+    '../img/portfolio/Photo/elizabeth.jpg': { tier: $scope.photo, col: [6, 7] },
+    '../img/portfolio/Photo/group.jpg': { tier: $scope.photo, col: [7, 7] },
+    '../img/portfolio/Photo/isco.jpg': { tier: $scope.photo, col: [5, 5] },
+    '../img/portfolio/Photo/jordan.jpg': { tier: $scope.photo, col: [5, 6] },
+    '../img/portfolio/Photo/jordan2.jpg': { tier: $scope.photo, col: [7, 6] },
+    '../img/portfolio/Web/celli.png': { tier: $scope.web, col: [5, 4] },
+    '../img/portfolio/Web/header.png': { tier: $scope.web, col: [7, 8] },
+  }
+
   $scope.scrollPortfolio = function() {
     $('html, body').animate({
         scrollTop: $("div.portfolio").offset().top

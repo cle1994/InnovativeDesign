@@ -1,20 +1,33 @@
 <div class="home-container" data-ng-controller="HomeController">
-  <div class="logo-header">
-    <div class="logo-wrapper">
+  <section class="logo-wrapper">
+    <div class="logo-vert">
       <div class="logo-img">
-        <img class="logotxt" src="img/innovative.svg" />
+        <img src="img/innovative.svg" alt="">
       </div>
-      <div class="animation">
-        <span class="type">DESIGN<span>&#124;</span></span>
-        <span class="type">PHOTOGRAPHY<span>&#124;</span></span>
-        <span class="type">EDUCATION<span>&#124;</span></span>
-        <span class="type">WEBDESIGN<span>&#124;</span></span>
-        <span class="type">VIDEOGRAPHY<span>&#124;</span></span>
-        <span class="type">DESIGN<span>&#124;</span></span>
+      <div class="animation-wrapper">
+        <div class="typewriter">
+          <span class="type">
+            design<span>&#124;</span>
+          </span>
+          <span class="type">
+            photography<span>&#124;</span>
+          </span>
+          <span class="type">
+            education<span>&#124;</span>
+          </span>
+          <span class="type">
+            web&nbsp;design<span>&#124;</span>
+          </span>
+          <span class="type">
+            videography<span>&#124;</span>
+          </span>
+          <span class="type">
+            design<span>&#124;</span>
+          </span>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="pager" data-ng-click="scrollPortfolio()">
+  </section>
+  <div class="pager scroll-down" data-ng-click="scrollPortfolio()">
     <div><i class="fa fa-angle-down arrow-down"></i></div>
   </div>
 <!--   <div class="events">
@@ -22,46 +35,10 @@
       <img src="img/fb.png" alt=""><a href="http://facebook.com/{{ fbevent.id }}" target="_blank">{{ fbname }} on {{ fbday }} at {{ fbtime }} in {{ fblocation }}</a>
     </div>
   </div> -->
-  <div class="portfolio col-md-12 no-padding">
+  <div class="portfolio col-lg-12 no-padding">
     <div class="image-container container-fluid">
-      <div class="center-col col-md-4">
-        <div class="background-blue"></div>
-      </div>
-      <div class="center-col col-md-4">
-        <div class="background-red"></div>
-      </div>
-      <div class="center-col col-md-4">
-        <div class="background-green"></div>
-      </div>
-      <div class="center-col col-md-3">
-        <div class="background-blue"></div>
-      </div>
-      <div class="center-col col-md-6">
-        <div class="background-yellow"></div>
-      </div>
-      <div class="center-col col-md-3">
-        <div class="background-green"></div>
-      </div>
-      <div class="center-col col-md-8">
-        <div class="background-blue"></div>
-      </div>
-      <div class="center-col col-md-4">
-        <div class="background-yellow"></div>
-      </div>
-      <div class="center-col col-md-3">
-        <div class="background-green"></div>
-      </div>
-      <div class="center-col col-md-9">
-        <div class="background-red"></div>
-      </div>
-      <div class="center-col col-md-6">
-        <div class="background-blue"></div>
-      </div>
-      <div class="center-col col-md-6">
-        <div class="background-green"></div>
-      </div>
-      <div class="center-col col-md-4">
-        <div class="background-blue"></div>
+      <div data-ng-repeat="(image, data) in data" class="center-col col-lg-{{ data.col[0] }} col-md-{{ data.col[1] }}" data-ng-show="{{ data.tier }}">
+        <div class="background" style="background: url({{ image }});"></div>
       </div>
     </div>
     <div class="footer"></div>

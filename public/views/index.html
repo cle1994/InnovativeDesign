@@ -52,11 +52,22 @@
     <div id="fb-root"></div>
     <div id="wrapper" data-ng-controller="MainController">
       <div class="menu-toggle" data-ng-click="menuToggle()">
-        <img src="../img/menu.png" alt="">
+        <!-- <img src="../img/menu.png" alt=""> -->
+        <div class="hamburger">
+          <span class="bar bar1"></span>
+          <span class="bar bar2"></span>
+          <span class="bar bar3"></span>
+        </div>
+    <!--     <div class="innod-img">
+          <img src="../img/innovative.png" alt="">
+        </div> -->
       </div>
       <div id="sidebar-wrapper">
         <div class="side-logo">
           <img src="../img/logo-white.png" alt="">
+          <div class="menu-text">
+            <span class="space">men</span><span>u</span>
+          </div>
         </div>
         <ul class="sidebar-nav">
           <li><a class="nav-links" href="/" data-ng-click="menuClose()">Home</a></li>

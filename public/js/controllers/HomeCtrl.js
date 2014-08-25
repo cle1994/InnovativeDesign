@@ -14,6 +14,8 @@ innovativeDesign.controller('HomeController', function($scope, HomeService) {
   $scope.photo = true;
   $scope.web = true;
 
+  $scope.popup = false;
+
   $scope.data = {
     '../img/portfolio/Blue/chemisense.png': { tier: $scope.blue, col: [4, 7] },
     '../img/portfolio/Blue/markhor.png': { tier: $scope.blue, col: [4, 5] },
@@ -44,6 +46,15 @@ innovativeDesign.controller('HomeController', function($scope, HomeService) {
     '../img/portfolio/Photo/jordan2.jpg': { tier: $scope.photo, col: [7, 6] },
     '../img/portfolio/Web/celli.png': { tier: $scope.web, col: [5, 4] },
     '../img/portfolio/Web/header.png': { tier: $scope.web, col: [7, 8] },
+  }
+
+  $scope.fullImage = function(picture) {
+    $scope.bigImage = picture;
+    $scope.popup = true;
+  }
+
+  $scope.close = function() {
+    $scope.popup = false;
   }
 
   $scope.scrollPortfolio = function() {

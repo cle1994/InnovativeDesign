@@ -16,41 +16,52 @@ innovativeDesign.controller('HomeController', function($scope, HomeService) {
 
   $scope.popup = false;
 
-  $scope.data = {
-    '../img/portfolio/Blue/chemisense.png': { tier: $scope.blue, col: [4, 7] },
-    '../img/portfolio/Blue/markhor.png': { tier: $scope.blue, col: [4, 5] },
-    '../img/portfolio/Blue/transport.png': { tier: $scope.blue, col: [4, 6] },
-    '../img/portfolio/Blue/transport2.png': { tier: $scope.blue, col: [6, 6] },
-    '../img/portfolio/Gold/bbjj.png': { tier: $scope.gold, col: [3, 5] },
-    '../img/portfolio/Gold/bbjj2.png': { tier: $scope.gold, col: [3, 7] },
-    '../img/portfolio/Gold/che.png': { tier: $scope.gold, col: [4, 6] },
-    '../img/portfolio/Gold/paws.png': { tier: $scope.gold, col: [3, 6] },
-    '../img/portfolio/Gold/paws2.png': { tier: $scope.gold, col: [5, 4] },
-    '../img/portfolio/Gold/smartbod.png': { tier: $scope.gold, col: [6, 8] },
-    '../img/portfolio/Gold/smartbod2.png': { tier: $scope.gold, col: [6, 8] },
-    '../img/portfolio/Marketing/bear.png': { tier: $scope.marketing, col: [4, 4] },
-    '../img/portfolio/Marketing/card1.png': { tier: $scope.marketing, col: [4, 4] },
-    '../img/portfolio/Marketing/card2.png': { tier: $scope.marketing, col: [4, 4] },
-    '../img/portfolio/Marketing/card3.png': { tier: $scope.marketing, col: [5, 4] },
-    '../img/portfolio/Marketing/obsession.png': { tier: $scope.marketing, col: [7, 6] },
-    '../img/portfolio/Marketing/panel.png': { tier: $scope.marketing, col: [7, 6] },
-    '../img/portfolio/Marketing/rgb.png': { tier: $scope.marketing, col: [5, 4] },
-    '../img/portfolio/Marketing/valentine1.png': { tier: $scope.marketing, col: [4, 8] },
-    '../img/portfolio/Photo/bb1.jpg': { tier: $scope.photo, col: [4, 6] },
-    '../img/portfolio/Photo/bb2.jpg': { tier: $scope.photo, col: [4, 6] },
-    '../img/portfolio/Photo/bw.jpg': { tier: $scope.photo, col: [6, 5] },
-    '../img/portfolio/Photo/eliz.jpg': { tier: $scope.photo, col: [6, 7] },
-    '../img/portfolio/Photo/group.jpg': { tier: $scope.photo, col: [7, 7] },
-    '../img/portfolio/Photo/isco.jpg': { tier: $scope.photo, col: [5, 5] },
-    '../img/portfolio/Photo/jordan.jpg': { tier: $scope.photo, col: [5, 6] },
-    '../img/portfolio/Photo/jordan2.jpg': { tier: $scope.photo, col: [7, 6] },
-    '../img/portfolio/Web/celli.png': { tier: $scope.web, col: [5, 4] },
-    '../img/portfolio/Web/header.png': { tier: $scope.web, col: [7, 8] },
-  }
+  $scope.data = [
+    [ '../img/portfolio/Blue/chemisense.png', $scope.blue, [4, 7] ],
+    [ '../img/portfolio/Blue/markhor.png', $scope.blue, [4, 5] ],
+    [ '../img/portfolio/Blue/transport.png', $scope.blue, [4, 6] ],
+    [ '../img/portfolio/Blue/transport2.png', $scope.blue, [6, 6] ],
+    [ '../img/portfolio/Gold/bbjj.png', $scope.gold, [3, 5] ],
+    [ '../img/portfolio/Gold/bbjj2.png', $scope.gold, [3, 7] ],
+    [ '../img/portfolio/Gold/che.png', $scope.gold, [4, 6] ],
+    [ '../img/portfolio/Gold/paws.png', $scope.gold, [3, 6] ],
+    [ '../img/portfolio/Gold/paws2.png', $scope.gold, [5, 4] ],
+    [ '../img/portfolio/Gold/smartbod.png', $scope.gold, [6, 8] ],
+    [ '../img/portfolio/Gold/smartbod2.png', $scope.gold, [6, 8] ],
+    [ '../img/portfolio/Marketing/bear.png', $scope.marketing, [4, 4] ],
+    [ '../img/portfolio/Marketing/card1.png', $scope.marketing, [4, 4] ],
+    [ '../img/portfolio/Marketing/card2.png', $scope.marketing, [4, 4] ],
+    [ '../img/portfolio/Marketing/card3.png', $scope.marketing, [5, 4] ],
+    [ '../img/portfolio/Marketing/obsession.png', $scope.marketing, [7, 6] ],
+    [ '../img/portfolio/Marketing/panel.png', $scope.marketing, [7, 6] ],
+    [ '../img/portfolio/Marketing/rgb.png', $scope.marketing, [5, 4] ],
+    [ '../img/portfolio/Marketing/valentine1.png', $scope.marketing, [4, 8] ],
+    [ '../img/portfolio/Photo/bb1.jpg', $scope.photo, [4, 6] ],
+    [ '../img/portfolio/Photo/bb2.jpg', $scope.photo, [4, 6] ],
+    [ '../img/portfolio/Photo/bw.jpg', $scope.photo, [6, 5] ],
+    [ '../img/portfolio/Photo/eliz.jpg', $scope.photo, [6, 7] ],
+    [ '../img/portfolio/Photo/group.jpg', $scope.photo, [7, 7] ],
+    [ '../img/portfolio/Photo/isco.jpg', $scope.photo, [5, 5] ],
+    [ '../img/portfolio/Photo/jordan.jpg', $scope.photo, [5, 6] ],
+    [ '../img/portfolio/Photo/jordan2.jpg', $scope.photo, [7, 6] ],
+    [ '../img/portfolio/Web/celli.png', $scope.web, [5, 4] ],
+    [ '../img/portfolio/Web/header.png', $scope.web, [7, 8] ]
+  ]
+
+  $scope.arrayLength = $scope.data.length;
 
   $scope.fullImage = function(picture) {
-    $scope.bigImage = picture;
+    console.log(picture);
+    $scope.ind = picture;
     $scope.popup = true;
+  }
+
+  $scope.prevImage = function(index) {
+    $scope.ind = index - 1;
+  }
+
+  $scope.nextImage = function(index) {
+    $scope.ind = index + 1;
   }
 
   $scope.close = function() {

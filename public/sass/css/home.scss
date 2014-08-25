@@ -313,6 +313,7 @@ $primary-black: #252930;
 
 .full-image {
   display: table;
+  table-layout: fixed;
   position: fixed;
   top: 0px;
   left: 0px;

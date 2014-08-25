@@ -39,17 +39,17 @@
   </div> -->
   <div class="portfolio col-lg-12 no-padding">
     <div class="image-container container-fluid">
-      <div data-ng-repeat="(image, data) in data" class="center-col col-lg-{{ data.col[0] }} col-md-{{ data.col[1] }}" data-ng-show="{{ data.tier }}" data-ng-click="fullImage(image)">
-        <div class="background" style="background: url({{ image }});"></div>
+      <div data-ng-repeat="image in data" class="center-col col-lg-{{ image[2][0] }} col-md-{{ image[2][1] }}" data-ng-show="{{ image[1] }}" data-ng-click="fullImage($index)">
+        <div class="background" style="background: url({{ image[0] }});"></div>
       </div>
     </div>
     <div class="footer"></div>
   </div>
-  <div class="full-image" data-ng-show="popup" data-ng-click="close()">
-    <div class="middle row-fluid">
+  <div class="full-image" data-ng-show="popup">
+    <div class="middle">
       <div class="popup-image">
         <div class="image-wrapper">
-          <img src="{{ bigImage }}" alt="">
+          <img src="{{ data[ind][0] }}" alt="" data-ng-click="close()">
         </div>
       </div>
     </div>

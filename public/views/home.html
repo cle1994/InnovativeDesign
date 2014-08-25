@@ -45,11 +45,11 @@
     </div>
     <div class="footer"></div>
   </div>
-  <div class="full-image" data-ng-show="popup">
+  <div class="full-image" data-ng-show="popup" data-ng-click="close()">
     <div class="middle">
       <div class="popup-image">
         <div class="image-wrapper">
-          <img src="{{ data[ind][0] }}" alt="" data-ng-click="close()">
+          <img src="{{ data[ind][0] }}" alt="">
         </div>
       </div>
     </div>

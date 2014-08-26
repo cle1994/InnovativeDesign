@@ -13,9 +13,6 @@ innovativeDesign.controller('HomeController', function($scope, HomeService) {
   $scope.gold = true;
   $scope.photo = true;
   $scope.web = true;
-
-  $scope.popup = false;
-
   $scope.data = [
     [ '../img/portfolio/Blue/chemisense.png', $scope.blue, [4, 7] ],
     [ '../img/portfolio/Blue/markhor.png', $scope.blue, [4, 5] ],
@@ -48,36 +45,25 @@ innovativeDesign.controller('HomeController', function($scope, HomeService) {
     [ '../img/portfolio/Web/header.png', $scope.web, [7, 8] ]
   ]
 
+  $scope.popup = false;
   $scope.arrayLength = $scope.data.length;
 
+
+
   $scope.fullImage = function(picture) {
-    console.log(picture);
     $scope.ind = picture;
     $scope.popup = true;
   }
 
-  $scope.off = function(pos) {
-    if (pos === 'prev') {
-      if ($scope.ind === 0) {
-        return true
-      }
-    } else if (pos === 'next') {
-      if ($scope.ind === $scope.arrayLength - 1) {
-        return true
-      }
-    }
-  }
-
-  $scope.prev = function() {
-    $scope.ind -= 1;
-  }
-
-  $scope.next = function() {
-    $scope.ind += 1;
-  }
-
   $scope.close = function() {
     $scope.popup = false;
+  }
+
+  $scope.keyClose = function(key) {
+    console.log(key.keyCode);
+    if (key.keyCode == 27) {
+      $scope.popup = false;
+    }
   }
 
   $scope.scrollPortfolio = function() {

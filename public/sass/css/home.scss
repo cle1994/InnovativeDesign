@@ -332,10 +332,39 @@ $primary-black: #252930;
       z-index: 100000000;
       text-align: center;
       .image-wrapper {
+        position: relative;
+        display: inline-block;
         img {
           max-width: 80%;
-          max-height: 90vh;
-          margin: 0 auto;
+          max-height: 80vh;
+        }
+        .x-close {
+          z-index: 100000000000000;
+          position: absolute;
+          top: -15px;
+          right: 20px;
+          background: #ffffff;
+          border-radius: 50%;
+          border: 1px solid #dddddd;
+          width: 30px;
+          height: 30px;
+          .x {
+            -webkit-transition: all 0.25s;
+            -moz-transition: all 0.25s;
+            transition: all 0.25s;
+            position: absolute;
+            width: 20px;
+            height: 3px;
+            background: #cccccc;
+            top: 13px;
+            left: 4px;
+          }
+          .x1 {
+            @include transform(rotate(45deg));
+          }
+          .x2 {
+            @include transform(rotate(-45deg));
+          }
         }
       }
     }

@@ -56,12 +56,24 @@ innovativeDesign.controller('HomeController', function($scope, HomeService) {
     $scope.popup = true;
   }
 
-  $scope.prevImage = function(index) {
-    $scope.ind = index - 1;
+  $scope.off = function(pos) {
+    if (pos === 'prev') {
+      if ($scope.ind === 0) {
+        return true
+      }
+    } else if (pos === 'next') {
+      if ($scope.ind === $scope.arrayLength - 1) {
+        return true
+      }
+    }
   }
 
-  $scope.nextImage = function(index) {
-    $scope.ind = index + 1;
+  $scope.prev = function() {
+    $scope.ind -= 1;
+  }
+
+  $scope.next = function() {
+    $scope.ind += 1;
   }
 
   $scope.close = function() {

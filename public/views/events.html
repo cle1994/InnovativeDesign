@@ -1,0 +1,15 @@
+<!-- public/views/events.html -->
+<!-- Innovative Design -->
+<!-- by Christian Le -->
+<!-- http://christianle.com -->
+<!-- Github: cle1994  -->
+<!-- LinkedIn: http://www.linkedin.com/in/christianle94/ -->
+
+<div class="events-container" data-ng-controller="EventController">
+  <div class="events">
+    <div data-ng-show="eventShow">
+      <img src="img/fb.png" alt=""><a href="http://facebook.com/{{ fbevent.id }}" target="_blank">{{ fbname }} on {{ fbday }} at {{ fbtime }} in {{ fblocation }}</a>
+      {{ fbphoto }}
+    </div>
+  </div>
+</div>

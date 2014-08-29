@@ -1,7 +1,7 @@
 // Innovative Design
 // by Christian Le
 // http://christianle.com
-// Github: cle1994 
+// Github: cle1994
 // LinkedIn: http://www.linkedin.com/in/christianle94/
 
 innovativeDesign.factory('HomeService', function() {

@@ -121,6 +121,10 @@ $primary-black: #252930;
   }
 }
 
+.intro {
+  color: lighten($primary-black, 25%);
+}
+
 @media only screen and (max-width: 767px) {
   .intro {
     margin-top: 100px;

@@ -22,5 +22,9 @@ innovativeDesign.config(['$routeProvider', '$locationProvider', function($routeP
       templateUrl: 'views/request.html'
     })
 
+    .otherwise({
+      redirectTo: '/'
+    })
+
   $locationProvider.html5Mode(true);
 }]);

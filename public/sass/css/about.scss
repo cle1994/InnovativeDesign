@@ -351,3 +351,11 @@ header {
     color: lighten($primary-black, 25%);
   }
 }
+
+@media only screen and (max-width: 767px) {
+  .about-wrapper {
+    header {
+      padding-top: 100px;
+    }
+  }
+}

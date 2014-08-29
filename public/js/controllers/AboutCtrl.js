@@ -1,3 +1,9 @@
+// Innovative Design
+// by Christian Le
+// http://christianle.com
+// Github: cle1994
+// LinkedIn: http://www.linkedin.com/in/christianle94/
+
 innovativeDesign.controller('AboutController', function($scope) {
   $scope.menuClick = function() {
     $('.menu-toggle').toggleClass('toggled');
@@ -29,7 +35,7 @@ innovativeDesign.controller('AboutController', function($scope) {
     var topPosition = $(window).scrollTop() + $(window).height()/2,
       servicesNumber = itemsTopValues.length;
     $.each(itemsTopValues, function(key, value){
-      if ( (itemsTopValues[key] <= topPosition && itemsTopValues[key+1] > topPosition) || (itemsTopValues[key] <= topPosition && key+1 == servicesNumber ) ) {  
+      if ( (itemsTopValues[key] <= topPosition && itemsTopValues[key+1] > topPosition) || (itemsTopValues[key] <= topPosition && key+1 == servicesNumber ) ) {
         $('.about-wrapper').removeClass('new-color-'+(key-1)+' new-color-'+(key+1)).addClass('new-color-'+key);
       }
     });

@@ -1,3 +1,9 @@
+// Innovative Design
+// by Christian Le
+// http://christianle.com
+// Github: cle1994
+// LinkedIn: http://www.linkedin.com/in/christianle94/
+
 innovativeDesign.controller('HomeController', function($scope, HomeService) {
   var facebookEvents = [];
   var i = 0;
@@ -69,7 +75,7 @@ innovativeDesign.controller('HomeController', function($scope, HomeService) {
   $scope.scrollPortfolio = function() {
     $('html, body').animate({
         scrollTop: $("div.portfolio").offset().top
-    }, 1000); 
+    }, 1000);
   }
 
   var getDate = function(date) {

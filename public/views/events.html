@@ -6,18 +6,24 @@
 <!-- LinkedIn: http://www.linkedin.com/in/christianle94/ -->
 
 <div class="events-container" data-ng-controller="EventController">
-  <div class="">
-    <div data-ng-repeat="event in events">
-      <img src="{{ covers[$index] }}" alt="">
-      <br>
-      {{ event.name }}
-      <br>
-      {{ event.start_time | dateFilter }}
-      <br>
-      {{ event.start_time | timeFilter }}
-      <br>
-      {{ event.location }}
-      <br>
-    </div>
+  <div class="container-fluid">
+    <div class="col-md-8 col-md-offset-2" data-ng-repeat="event in events">
+      <a href="http://facebook.com/{{ event.id }}" target="_blank">
+        <div class="event-card">
+          <div class="event-image-wrapper">
+            <img class="event-image" src="{{ covers[$index] }}" alt="">
+          </div>
+          <div class="event-text">
+              {{ event.name }}
+              <br>
+              {{ event.start_time | timeFilter }}
+              <br>
+              {{ event.start_time | dateFilter }}
+              <br>
+              {{ event.location }}
+          </div>
+        </div>
+      </div>
+    </a>
   </div>
 </div>

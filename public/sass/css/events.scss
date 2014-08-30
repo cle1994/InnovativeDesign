@@ -1,0 +1,61 @@
+/*
+ * Innovative Design by Christian Le
+ * http://christianle.com
+ * Github: cle1994
+ * LinkedIn: http://www.linkedin.com/in/christianle94/
+ */
+
+/*
+ * Events
+ */
+
+$primary-blue: #0592BF;
+$primary-red: #C83353;
+$primary-yellow: #E7B03A;
+$primary-black: #252930;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  background-clip: padding-box; /* Stops background leaking */
+}
+
+.events-container {
+  a, a:hover {
+    text-decoration: none;
+    color: lighten($primary-black, 25%);
+  } 
+  margin-top: 50px;
+  @media only screen and (max-width: 767px) {
+    margin-top: 85px;
+  }
+  text-decoration: none;
+  .event-card {
+    text-decoration: none;
+    margin-bottom: 50px;
+    text-align: center;
+    box-shadow: 0px 0px 5px lighten($primary-black, 65%);
+    .event-image-wrapper {
+      display: inline-block;
+      margin: 0 auto;
+      img {
+        width: 100%;
+      }
+    }
+    .event-text {
+      padding: 10px;
+      text-decoration: none;
+      color: lighten($primary-black, 25%);
+      text-align: left;
+    }
+
+    &:hover {
+      text-decoration: none;
+      box-shadow: 0px 0px 10px lighten($primary-black, 55%);
+      .event-text {
+        text-decoration: none;
+        color: lighten($primary-black, 25%);
+      }
+    }
+  }
+}

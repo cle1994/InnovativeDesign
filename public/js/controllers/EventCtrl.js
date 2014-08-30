@@ -4,7 +4,10 @@
 // Github: cle1994
 // LinkedIn: http://www.linkedin.com/in/christianle94/
 
-innovativeDesign.controller('ContactController', function($scope, HomeService) {
+innovativeDesign.controller('EventController', function($scope, HomeService) {
+  var facebookEvents = [];
+  $scope.covers = [];
+  $scope.events = [];
 
   var randomColorLogo = function(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -17,9 +20,13 @@ innovativeDesign.controller('ContactController', function($scope, HomeService) {
         events[i].id + '?access_token=CAAUzUVdRbZAcBACFfGkQ4NgbywC4gW5KZAlWuggoKz1emZCRsTaaCkRaw2TLkFvrtwiGLr8PTkj2ZAy16bhmhVn440HlODvcp2ZABbuZC8ZBZCCB44Rtvhm7JlTYc0nOk1XXrnldCP3CIeY2UIdv4VPkWpKFCbPovQUZCkXFKa6Po4hoPAKUHShIWtZB7YHJ5VPXRXYSMYldZB3q2E75eGH3pXx&fields=cover',
         function(response) {
           if (response.cover) {
+            $scope.covers.push(response.cover.source);
             HomeService.pushPhoto(response.cover.source);
+            $scope.$apply();
           } else {
+            $scope.covers.push('../img/innovative-' + randomColorLogo(1, 4) + '.png');
             HomeService.pushPhoto('../img/innovative-' + randomColorLogo(1, 4) + '.png');
+            $scope.$apply();
           }
         }
       )
@@ -32,10 +39,25 @@ innovativeDesign.controller('ContactController', function($scope, HomeService) {
       "/118333034872164/events?access_token=CAAUzUVdRbZAcBACFfGkQ4NgbywC4gW5KZAlWuggoKz1emZCRsTaaCkRaw2TLkFvrtwiGLr8PTkj2ZAy16bhmhVn440HlODvcp2ZABbuZC8ZBZCCB44Rtvhm7JlTYc0nOk1XXrnldCP3CIeY2UIdv4VPkWpKFCbPovQUZCkXFKa6Po4hoPAKUHShIWtZB7YHJ5VPXRXYSMYldZB3q2E75eGH3pXx",
       function(response) {
         getCover(response.data);
+        facebookEvents = response.data;
         HomeService.set(response.data);
+        $scope.events = response.data;
+        $scope.$apply();
       }
     )
   };
+
+  // Used when angular route changes vs reloading page
+  var fbRouteChange = function() {
+    facebookEvents = HomeService.get();
+    $scope.covers = HomeService.getPhoto();
+    $scope.events = facebookEvents;
+  };
+
+  if (facebookEvents.length == 0) {
+    fbRouteChange();
+  }
+  // -- angular route addition --
 
   // Facebook Graph API
   window.fbAsyncInit = function() {

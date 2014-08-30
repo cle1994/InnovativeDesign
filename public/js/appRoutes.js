@@ -18,6 +18,10 @@ innovativeDesign.config(['$routeProvider', '$locationProvider', function($routeP
       templateUrl: 'views/contact.html'
     })
 
+    .when('/events', {
+      templateUrl: 'views/events.html'
+    })
+
     .when('/request', {
       templateUrl: 'views/request.html'
     })

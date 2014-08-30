@@ -6,11 +6,8 @@ Innovative Design
 by
 
 Christian Le
-
 http://christianle.com
-
 Github: cle1994
-
 LinkedIn: http://linkedin.com/christianle94
 
 ================

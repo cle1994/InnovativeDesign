@@ -13,18 +13,6 @@ innovativeDesign.controller('EventController', function($scope, HomeService) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
-  // Used when angular route changes vs reloading page
-  var fbRouteChange = function() {
-    facebookEvents = HomeService.get();
-    $scope.covers = HomeService.getPhoto();
-    $scope.events = facebookEvents;
-  };
-
-  if (facebookEvents.length == 0) {
-    fbRouteChange();
-  }
-  // -- angular route addition --
-
   // Used to get cover photo from events: isn't including in facebook event object
   var getCover = function(events) {
     for (var i = 0; i < events.length; i += 1) {
@@ -58,6 +46,18 @@ innovativeDesign.controller('EventController', function($scope, HomeService) {
       }
     )
   };
+
+  // Used when angular route changes vs reloading page
+  var fbRouteChange = function() {
+    facebookEvents = HomeService.get();
+    $scope.covers = HomeService.getPhoto();
+    $scope.events = facebookEvents;
+  };
+
+  if (facebookEvents.length == 0) {
+    fbRouteChange();
+  }
+  // -- angular route addition --
 
   // Facebook Graph API
   window.fbAsyncInit = function() {

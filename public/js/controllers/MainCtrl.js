@@ -4,7 +4,9 @@
 // Github: cle1994
 // LinkedIn: http://www.linkedin.com/in/christianle94/
 
-innovativeDesign.controller('MainController', function($scope, HomeService) {
+innovativeDesign.controller('MainController', function($scope, $location, HomeService) {
+  console.log($location.path());
+
   $scope.menuToggle = function() {
     $('#wrapper').toggleClass('toggled');
     $('.hamburger').toggleClass('active');

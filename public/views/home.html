@@ -39,14 +39,10 @@
       <i class="fa fa-angle-down arrow-down"></i>
     </div>
   </div>
-<!--   <div class="events">
-    <div data-ng-show="eventShow">
-      <img src="img/fb.png" alt=""><a href="http://facebook.com/{{ fbevent.id }}" target="_blank">{{ fbname }} on {{ fbday }} at {{ fbtime }} in {{ fblocation }}</a>
-    </div>
-  </div> -->
+
   <div class="portfolio col-lg-12 no-padding">
     <div class="image-container container-fluid">
-      <div data-ng-repeat="image in data" class="center-col col-lg-{{ image[2][0] }} col-md-{{ image[2][1] }}" data-ng-show="{{ image[1] }}" data-ng-click="fullImage($index)">
+      <div data-ng-repeat="image in data" class="hover center-col col-lg-{{ image[2][0] }} col-md-{{ image[2][1] }}" data-ng-show="{{ image[1] }}" data-ng-click="fullImage($index)">
         <div class="background" style="background: url({{ image[0] }});"></div>
       </div>
     </div>

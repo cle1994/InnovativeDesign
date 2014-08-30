@@ -268,16 +268,26 @@ $primary-black: #252930;
   .center-col {
     text-align: center;
   }
-  .background {
-    width: 100%;
-    background-size: cover !important;
-    background-position: center !important;
-    height: 325px;
-    margin-bottom: 30px;
-    box-shadow: 0px 0px 5px #aaaaaa;
-    -moz-box-shadow: 0px 0px 5px #aaaaaa;
-    -webkit-box-shadow: 0px 0px 5px #aaaaaa;
-    cursor: pointer;
+  .hover {
+    .background {
+      width: 100%;
+      background-size: cover !important;
+      background-position: center !important;
+      height: 325px;
+      margin-bottom: 30px;
+      box-shadow: 0px 0px 5px #aaaaaa;
+      -moz-box-shadow: 0px 0px 5px #aaaaaa;
+      -webkit-box-shadow: 0px 0px 5px #aaaaaa;
+      cursor: pointer;
+    }
+  }
+
+  .hover:hover {
+    .background {
+      box-shadow: 0px 0px 10px #999999;
+      -moz-box-shadow: 0px 0px 10px #999999;
+      -webkit-box-shadow: 0px 0px 10px #999999;
+    }
   }
 }
 

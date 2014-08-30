@@ -6,10 +6,18 @@
 <!-- LinkedIn: http://www.linkedin.com/in/christianle94/ -->
 
 <div class="events-container" data-ng-controller="EventController">
-  <div class="events">
-    <div data-ng-show="eventShow">
-      <img src="img/fb.png" alt=""><a href="http://facebook.com/{{ fbevent.id }}" target="_blank">{{ fbname }} on {{ fbday }} at {{ fbtime }} in {{ fblocation }}</a>
-      {{ fbphoto }}
+  <div class="">
+    <div data-ng-repeat="event in events">
+      <img src="{{ covers[$index] }}" alt="">
+      <br>
+      {{ event.name }}
+      <br>
+      {{ event.start_time | dateFilter }}
+      <br>
+      {{ event.start_time | timeFilter }}
+      <br>
+      {{ event.location }}
+      <br>
     </div>
   </div>
 </div>

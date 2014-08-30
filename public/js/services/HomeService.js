@@ -6,7 +6,20 @@
 
 innovativeDesign.factory('HomeService', function() {
   var fbEvents = [];
+  var fbEventsCovers = [];
   var fbEventsServices = {};
+
+  fbEventsServices.clearPhoto = function() {
+    fbEventsCovers = [];
+  }
+
+  fbEventsServices.pushPhoto = function(data) {
+    fbEventsCovers.push(data);
+  }
+
+  fbEventsServices.getPhoto = function() {
+    return fbEventsCovers;
+  }
 
   fbEventsServices.set = function(data) {
     fbEvents = data;

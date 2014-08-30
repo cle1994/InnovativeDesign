@@ -5,15 +5,6 @@
 // LinkedIn: http://www.linkedin.com/in/christianle94/
 
 innovativeDesign.controller('HomeController', function($scope, HomeService) {
-  var facebookEvents = [];
-  var i = 0;
-  $scope.eventShow = false;
-  $scope.fbevent;
-  $scope.fbname;
-  $scope.fbday;
-  $scope.fbtime;
-  $scope.fblocation;
-
   $scope.marketing = true;
   $scope.blue = true;
   $scope.gold = true;
@@ -54,116 +45,52 @@ innovativeDesign.controller('HomeController', function($scope, HomeService) {
   $scope.popup = false;
   $scope.arrayLength = $scope.data.length;
 
-
-
   $scope.fullImage = function(picture) {
     $scope.ind = picture;
     $scope.popup = true;
   }
-
   $scope.close = function() {
     $scope.popup = false;
   }
-
   $scope.keyClose = function(key) {
     console.log(key.keyCode);
     if (key.keyCode == 27) {
       $scope.popup = false;
     }
   }
-
   $scope.scrollPortfolio = function() {
     $('html, body').animate({
         scrollTop: $("div.portfolio").offset().top
     }, 1000);
   }
 
-  var getDate = function(date) {
-    var arr = date.split('-');
-    var month;
-    if (arr[1] == '01') {
-      month = 'Jan'
-    } else if (arr[1] == '02') {
-      month = 'Feb'
-    } else if (arr[1] == '03') {
-      month = 'Mar'
-    } else if (arr[1] == '04') {
-      month = 'Apr'
-    } else if (arr[1] == '05') {
-      month = 'May'
-    } else if (arr[1] == '06') {
-      month = 'Jun'
-    } else if (arr[1] == '07') {
-      month = 'Jul'
-    } else if (arr[1] == '08') {
-      month = 'Aug'
-    } else if (arr[1] == '09') {
-      month = 'Sep'
-    } else if (arr[1] == '10') {
-      month = 'Oct'
-    } else if (arr[1] == '11') {
-      month = 'Nov'
-    } else if (arr[1] == '12') {
-      month = 'Dec'
-    }
-    return month + ' ' + arr[2] + ', ' + arr[0];
-  };
-  var getTime = function(time) {
-    var arr = time.split(':');
-    var hour;
-    var designation = 'am';
-    if (arr[0] >= 12) {
-      designation = 'pm'
-    }
-    if (arr[0] > 12) {
-      hour = (parseInt(arr[0]) - 12).toString();
-    } else {
-      hour = arr[0].toString();
-    }
-    return hour + ':' + arr[1] + ' ' + designation;
+  var randomColorLogo = function(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
   }
-  var interval = function() {
-    setInterval(function() {
-      i = (i + 1) % facebookEvents.length;
-      $scope.$apply(function() {
-        $scope.fbevent = facebookEvents[i];
-        $scope.fbname = $scope.fbevent.name;
-        $scope.fbday = getDate($scope.fbevent.start_time.substring(0,10));
-        $scope.fbtime = getTime($scope.fbevent.start_time.substring(11,16));
-        $scope.fblocation = $scope.fbevent.location;
-        $scope.eventShow = true;
-      })
-    }, 5000);
-  };
-  var routeFbCall = function() {
-    facebookEvents = HomeService.get();
-    $scope.fbevent = facebookEvents[i];
-    if ($scope.fbevent) {
-      $scope.fbname = $scope.fbevent.name;
-      $scope.fbday = getDate($scope.fbevent.start_time.substring(0,10));
-      $scope.fbtime = getTime($scope.fbevent.start_time.substring(11,16));
-      $scope.fblocation = $scope.fbevent.location;
-      interval();
-      $scope.eventShow = true;
-    } else {
-      $scope.eventShow = false;
+
+  // Used to get cover photo from events: isn't including in facebook event object
+  var getCover = function(events) {
+    for (var i = 0; i < events.length; i += 1) {
+      FB.api(
+        events[i].id + '?access_token=CAAUzUVdRbZAcBACFfGkQ4NgbywC4gW5KZAlWuggoKz1emZCRsTaaCkRaw2TLkFvrtwiGLr8PTkj2ZAy16bhmhVn440HlODvcp2ZABbuZC8ZBZCCB44Rtvhm7JlTYc0nOk1XXrnldCP3CIeY2UIdv4VPkWpKFCbPovQUZCkXFKa6Po4hoPAKUHShIWtZB7YHJ5VPXRXYSMYldZB3q2E75eGH3pXx&fields=cover',
+        function(response) {
+          if (response.cover) {
+            HomeService.pushPhoto(response.cover.source);
+          } else {
+            HomeService.pushPhoto('../img/innovative-' + randomColorLogo(1, 4) + '.png');
+          }
+        }
+      )
     }
-  }
-  var fbcall = function() {
+  };
+
+  // Get Facebook events
+  var fbEndpoint = function() {
     FB.api(
-      "/118333034872164/events?access_token=CAAUzUVdRbZAcBACFfGkQ4NgbywC4gW5KZAlWuggoKz1emZCRsTaaCkRaw2TLkFvrtwiGLr8PTkj2ZAy16bhmhVn440HlODvcp2ZABbuZC8ZBZCCB44Rtvhm7JlTYc0nOk1XXrnldCP3CIeY2UIdv4VPkWpKFCbPovQUZCkXFKa6Po4hoPAKUHShIWtZB7YHJ5VPXRXYSMYldZB3q2E75eGH3pXx&since=1389953321",
+      "/118333034872164/events?access_token=CAAUzUVdRbZAcBACFfGkQ4NgbywC4gW5KZAlWuggoKz1emZCRsTaaCkRaw2TLkFvrtwiGLr8PTkj2ZAy16bhmhVn440HlODvcp2ZABbuZC8ZBZCCB44Rtvhm7JlTYc0nOk1XXrnldCP3CIeY2UIdv4VPkWpKFCbPovQUZCkXFKa6Po4hoPAKUHShIWtZB7YHJ5VPXRXYSMYldZB3q2E75eGH3pXx",
       function(response) {
-        $scope.$apply(function() {
-          HomeService.set(response.data);
-          facebookEvents = response.data;
-          $scope.fbevent = facebookEvents[i];
-          $scope.fbname = $scope.fbevent.name;
-          $scope.fbday = getDate($scope.fbevent.start_time.substring(0,10));
-          $scope.fbtime = getTime($scope.fbevent.start_time.substring(11,16));
-          $scope.fblocation = $scope.fbevent.location;
-          $scope.eventShow = true;
-          interval();
-        })
+        getCover(response.data);
+        HomeService.set(response.data);
       }
     )
   };
@@ -176,7 +103,8 @@ innovativeDesign.controller('HomeController', function($scope, HomeService) {
       version    : 'v2.1'
     });
 
-    fbcall();
+    fbEndpoint();
+    HomeService.clearPhoto();
   };
   (function(d, s, id){
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -185,9 +113,6 @@ innovativeDesign.controller('HomeController', function($scope, HomeService) {
     js.src = "//connect.facebook.net/en_US/sdk.js";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
-  // End Facebook Graph API Calls
+  // -- Facebook Graph API --
 
-  if (facebookEvents.length == 0) {
-    routeFbCall();
-  }
 });

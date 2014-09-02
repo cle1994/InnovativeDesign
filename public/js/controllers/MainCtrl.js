@@ -15,6 +15,11 @@ innovativeDesign.controller('MainController', function($scope, $location, HomeSe
     $('#wrapper').removeClass('toggled');
     $('.hamburger').removeClass('active');
   }
+  $scope.sideClose = function() {
+    if ($('#wrapper').hasClass('toggled')) {
+      $('#wrapper').removeClass('toggled');
+    }
+  }
 
   var randomColorLogo = function(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);

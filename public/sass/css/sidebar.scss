@@ -226,6 +226,9 @@ $primary-black: #252930;
         top: 8px;
         @include transform(rotate(-45deg));
       }
+      & + .menu {
+        opacity: 0;
+      }
     }
   }
 

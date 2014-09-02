@@ -32,9 +32,11 @@ $primary-black: #252930;
   text-decoration: none;
   .event-card {
     text-decoration: none;
+    margin: 0 auto;
     margin-bottom: 50px;
     text-align: center;
     box-shadow: 0px 0px 5px lighten($primary-black, 65%);
+    max-width: 720px;
     .event-image-wrapper {
       display: inline-block;
       margin: 0 auto;

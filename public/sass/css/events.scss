@@ -21,10 +21,12 @@ $primary-black: #252930;
 }
 
 .events-container {
+  font-size: 17px;
+  line-height: 24px;
   a, a:hover {
     text-decoration: none;
     color: lighten($primary-black, 25%);
-  } 
+  }
   margin-top: 50px;
   @media only screen and (max-width: 767px) {
     margin-top: 85px;

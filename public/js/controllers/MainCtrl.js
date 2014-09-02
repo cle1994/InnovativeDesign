@@ -18,6 +18,7 @@ innovativeDesign.controller('MainController', function($scope, $location, HomeSe
   $scope.sideClose = function() {
     if ($('#wrapper').hasClass('toggled')) {
       $('#wrapper').removeClass('toggled');
+      $('.hamburger').removeClass('active');
     }
   }
 

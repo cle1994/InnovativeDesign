@@ -97,6 +97,10 @@ $primary-black: #252930;
     &:hover {
       background-color: lighten($primary-black, 70%);
     }
+    &.disable {
+      border-color: lighten($primary-black, 70%);
+      background-color: lighten($primary-black, 70%);
+    }
   }
   .margin-bot {
     margin-bottom: 30px;
@@ -126,6 +130,7 @@ $primary-black: #252930;
 
 .intro {
   color: lighten($primary-black, 25%);
+  text-align: center;
 }
 
 .bootstrap-datetimepicker-widget.dropdown-menu {
@@ -173,5 +178,22 @@ $primary-black: #252930;
 @media only screen and (max-width: 767px) {
   .intro {
     margin-top: 100px;
+  }
+}
+
+.closed {
+  opacity: 0.4;
+}
+
+.tempclose {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 300;
+  margin-top: 50px;
+  color: $primary-red;
+  
+  @media (max-width: 767px) {
+    margin-top: 100px;
+    margin-bottom: -50px;
   }
 }

@@ -25,6 +25,9 @@ innovativeDesign.config(['$routeProvider', '$locationProvider', function($routeP
     .when('/request', {
       templateUrl: 'views/request.html'
     })
+    .when('/web/apply/2014', {
+      templateUrl: 'views/webapply.html'
+    })
 
     .otherwise({
       redirectTo: '/'

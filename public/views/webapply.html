@@ -1,0 +1,85 @@
+<!-- public/views/request.html -->
+<!-- Innovative Design -->
+<!-- by Christian Le -->
+<!-- http://christianle.com -->
+<!-- Github: cle1994  -->
+<!-- LinkedIn: http://www.linkedin.com/in/christianle94/ -->
+
+<div class="container-fluid" data-ng-controller="WebController">
+  <div class="intro pager" data-ng-show="!submitted && !loading">
+    <h3>Innovative Design Web Tier Application - Fall 2014</h3>
+  </div>
+  <form name="request" class="request" data-ng-show="!submitted">
+    <div class="form-group has-feedback col-md-8 col-md-offset-2">
+      <label class="control-label" for="service">Service Type</label>
+      <input type="text" data-ng-model="serviceType" name="serviceType" required class="form-control" id="serviceType" placeholder="Design, Photography, Web, etc.">
+      <span data-ng-show="request.serviceType.$error.required" class="glyphicon glyphicon-certificate form-control-feedback"></span>
+    </div>
+    <div class="form-group has-feedback col-md-8 col-md-offset-2">
+      <label class="control-label" for="orgName">Organization Name</label>
+      <input type="text" data-ng-model="orgName" name="orgName" required class="form-control" id="orgName" placeholder="Innovative Design">
+      <span data-ng-show="request.orgName.$error.required" class="glyphicon glyphicon-certificate form-control-feedback"></span>
+    </div>
+    <div class="form-group has-feedback col-md-8 col-md-offset-2">
+      <label class="control-label" for="contactName">Contact Name</label>
+      <input type="text" data-ng-model="contactName" name="contactName" required class="form-control" id="contactName" placeholder="Greg Chin/Lisa Inoue">
+      <span data-ng-show="request.contactName.$error.required" class="glyphicon glyphicon-certificate form-control-feedback"></span>
+    </div>
+    <div class="form-group has-feedback col-md-8 col-md-offset-2">
+      <label class="control-label" for="contactNum">Contact Phone Number</label>
+      <input type="text" data-ng-model="contactNum" name="contactNum" required data-ng-pattern="/\({0,1}[0-9]{3}\){0,1}\-{0,1}[0-9]{3}\-{0,1}[0-9]{4}/" class="form-control" id="contactNum" placeholder="(123)-456-7890">
+      <span data-ng-show="request.contactNum.$error.required" class="glyphicon glyphicon-certificate form-control-feedback"></span>
+      <span data-ng-show="request.contactNum.$error.pattern" class="glyphicon glyphicon-exclamation-sign form-control-feedback"></span>
+    </div>
+    <div class="form-group has-feedback col-md-8 col-md-offset-2">
+      <label class="control-label" for="contactEmail">Contact Email</label>
+      <input type="email" data-ng-model="contactEmail" name="contactEmail" required data-ng-pattern="/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/" class="form-control" id="contactEmail" placeholder="innovativedesignatcal@gmail.com">
+      <span data-ng-show="request.contactEmail.$error.pattern" class="glyphicon glyphicon-exclamation-sign form-control-feedback"></span>
+      <span data-ng-show="request.contactEmail.$error.required" class="glyphicon glyphicon-certificate form-control-feedback"></span>
+    </div>
+    <div class="form-group has-feedback col-md-8 col-md-offset-2">
+      <label class="control-label" for="orgType">Organization Type</label>
+      <select data-ng-model="orgType" name="orgType" required class="form-control" id="orgType" placeholder="">
+        <option value=""></option>
+        <option value="On Campus">On Campus</option>
+        <option value="Off Campus">Off Campus</option>
+      </select>
+      <span data-ng-show="request.orgType.$error.required" class="glyphicon glyphicon-certificate form-control-feedback selector"></span>
+    </div>
+    <div class="form-group has-feedback col-md-8 col-md-offset-2">
+      <label class="control-label" for="orgInfo">Organization Information</label>
+      <textarea data-ng-model="orgInfo" name="orgInfo" required class="form-control" id="orgInfo" rows="8" placeholder="Briefly describe your organization. Please include a website if applicable. e.g. Innovative Design is Berkeley's premier design and photography organization."></textarea>
+      <span data-ng-show="request.orgInfo.$error.required" class="glyphicon glyphicon-certificate form-control-feedback"></span>
+    </div>
+    <div class="form-group has-feedback col-md-8 col-md-offset-2">
+      <label class="control-label" for="addInfo">Additional Information</label>
+      <textarea data-ng-model="addInfo" name="addInfo" required class="form-control" id="addInfo" rows="8" placeholder="Please include more specific information about your request here."></textarea>
+      <span data-ng-show="request.addInfo.$error.required" class="glyphicon glyphicon-certificate form-control-feedback"></span>
+    </div>
+    <div class="form-group has-feedback col-md-8 col-md-offset-2">
+      <label class="control-label" for="date">Proposed Deadline</label>
+      <input type="text" data-ng-model="date" name="date" required data-ng-pattern="/[0-9]{1,2}\/[0-9]{1,2}\/[0-9]{2,4}/" class="form-control" id="date" placeholder="11/11/2014">
+      <span data-ng-show="request.date.$error.required" class="glyphicon glyphicon-certificate form-control-feedback"></span>
+    </div>
+    <div class="form-group has-feedback col-md-8 col-md-offset-2">
+      <label class="control-label" for="sketch">Design Sketch</label>
+      <input type="url" data-ng-model="sketch" name="sketch" class="form-control" id="sketch" placeholder="Please include link to a sketch of a design if applicable.">
+    </div>
+    <div class="col-md-8 col-md-offset-2">
+      <div class="pager">
+        <button class="btn btn-default margin-bot" data-ng-click="googleSheet()">Send Request</button>
+      </div>
+    </div>
+  </form>
+  <div data-ng-show="loading" class="loader">
+    <div class="pager">
+      <img src="../img/loading.gif" alt="">
+    </div>
+  </div>
+  <div data-ng-show="submitted && !loading" class="sent pager">
+    <h3>Your request has been sent!</h3>
+    <p>If you have any questions or changes don't be afraid to <a href="mailto:innovativedesignatcal@gmail.com">email us</a>.</p>
+    <p>If you'd like to contact a specific officer, please visit our <a href="/contact">contact page</a>.</p>
+    <p><a href="/">Return Home</a></p>
+  </div>
+</div>

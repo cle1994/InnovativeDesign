@@ -247,12 +247,59 @@ $primary-black: #252930;
 
 .scroll-down {
   height: 50vh;
+  position: relative;
+  margin: 0;
   .bounce-wrapper {
     @include vertical-align;
+    -webkit-transform: translateY(-80%);
+    -ms-transform: translateY(-80%);
+    transform: translateY(-80%);
     .arrow-down {
       @include animation(bounce 4s infinite);
       cursor: pointer;
       font-size: 60px;
+    }
+  }
+  .apply {
+    position: absolute;
+    bottom: 20px;
+    z-index: 100;
+    text-align: center;
+    width: 100%;
+    color: lighten($primary-black, 40%);
+    p {
+      font-size: 16px;
+      font-family: sans-serif;
+      font-weight: 200;
+      margin: 0;
+    }
+    .family {
+      margin-bottom: 18px;
+    }
+    .apply-link, .apply-link:visited {
+      font-size: 20px;
+      font-family: sans-serif;
+      font-weight: 300;
+      padding: 8px 40px;
+      color: $primary-blue;
+      @include border-radius(3px);
+      border: 1px solid $primary-blue;
+      -webkit-transition: border 0.2s, background 0.2s;
+      -moz-transition: border 0.2s, background 0.2s;
+      -o-transition: border 0.2s, background 0.2s;
+      transition: border 0.2s, background 0.2s;
+
+      &:hover, &:active {
+        text-decoration: none;
+        color: #ffffff;
+        border: 2px solid $primary-blue;
+        background: $primary-blue;
+      }
+    }
+    .due {
+      font-style: italic;
+      font-size: 12px;
+      margin-top: 20px;
     }
   }
 }

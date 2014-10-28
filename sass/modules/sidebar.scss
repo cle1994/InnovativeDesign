@@ -1,0 +1,107 @@
+// Sidebar Wrapper
+
+.sidebar {
+    @include innod-font();
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: $primary-blue;
+    z-index: 10;
+
+    .side-logo {
+        position: fixed;
+        height: 100%;
+        width: 250px;
+        left: 0;
+        background-color: $primary-blue;
+        z-index: 12;
+
+        -webkit-transition: left 0.15s;
+        -moz-transition: left 0.15s;
+        -o-transition: left 0.15s;
+        transition: left 0.15s;
+
+        img {
+            @include vertical-align();
+            width: 100%;
+        }
+
+        .menu-text {
+            position: fixed;
+            width: 250px;
+            left: 0px;
+            bottom: 25px;
+            text-align: center;
+            text-transform: uppercase;
+            opacity: 0.8;
+            color: #ffffff;
+
+            -webkit-transition: bottom 0.15s;
+            -moz-transition: bottom 0.15s;
+            -o-transition: bottom 0.15s;
+            transition: bottom 0.15s;
+
+            span {
+                @include innod-font();
+                font-weight: 300;
+                font-size: 18px;
+                color: #ffffff;
+
+                &.space {
+                    color: #ffffff;
+                    letter-spacing: 1em;
+                }
+            }
+        }
+    }
+
+    .sidebar-nav {
+        top: 47.5%;
+        padding-left: 35px;
+        z-index: 11;
+
+        li .nav-links {
+            @include innod-font();
+            margin: 30px 0px;
+            cursor: pointer;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 300;
+            font-size: 28px;
+
+            &:hover {
+                color: #cccccc;
+            }
+        }
+    }
+
+    &:hover {
+        .side-logo {
+            left: -250px;
+
+            .menu-text {
+                bottom: -50%;
+            }
+        }
+    }
+
+    @media (max-width: 860px) {
+        left: -250px;
+        z-index: 10;
+
+        -webkit-transition: left 0.35s;
+        -moz-transition: left 0.35s;
+        -o-transition: left 0.35s;
+        transition: left 0.35s;
+
+        .side-logo {
+            display: none;
+        }
+
+        &.showSidebar {
+            left: 0px;
+        }
+    }
+}

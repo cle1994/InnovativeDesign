@@ -1,0 +1,88 @@
+<!-- public/views/index.html -->
+<!-- Innovative Design -->
+<!-- by Christian Le -->
+<!-- http://christianle.com -->
+<!-- Github: cle1994  -->
+<!-- LinkedIn: http://www.linkedin.com/in/christianle94/ -->
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <base href="/" />
+
+        <title changeTitle></title>
+        <link rel="icon" type="image/png" href="../img/icon/favicon.png">
+
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="css/application.css">
+
+        <!-- Angular -->
+        <script src="./libs/js/angular.min.js"></script>
+        <script src="./libs/js/angular-ui-router.min.js"></script>
+        <script src="./libs/js/angular-touch.min.js"></script>
+        <script src="./libs/js/angular-animate.min.js"></script>
+
+        <!-- ANGULAR CUSTOM -->
+        <script src="./js/app.min.js"></script>
+    </head>
+    <body id="ng-app" data-ng-app="innovativeDesign" data-ng-controller="MainController" scroll>
+        <!-- Phone Menu Bar -->
+        <div class="menu-toggle" data-ng-class="{ showSidebar : sidebarShow }" data-ng-click="menuToggle()">
+            <div class="hamburger" data-ng-class="{ showSidebar : sidebarShow }">
+                <span class="bar bar1"></span>
+                <span class="bar bar2"></span>
+                <span class="bar bar3"></span>
+            </div>
+            <div class="menu" scroll data-ng-class="{ hide : changeScroll, showSidebar : sidebarShow }">Menu</div>
+        </div>
+
+        <!-- Sidebar Navigation -->
+        <div class="sidebar" data-ng-class="{ showSidebar : sidebarShow }">
+            <div class="side-logo">
+                <img src="../img/icon/logo-white.png" alt="">
+                <div class="menu-text">
+                    <span class="space">men</span><span>u</span>
+                </div>
+            </div>
+            <ul class="sidebar-nav vert-center">
+                <li>
+                    <div class="nav-links" ui-sref="home" data-ng-click="menuClose()">
+                        Home
+                    </div>
+                </li>
+                <li>
+                    <div class="nav-links" ui-sref="about" data-ng-click="menuClose()">
+                        About
+                    </div>
+                </li>
+                <li>
+                    <div class="nav-links" ui-sref="contact" data-ng-click="menuClose()">
+                        Contact
+                    </div>
+                </li>
+                <li>
+                    <div class="nav-links" ui-sref="events" data-ng-click="menuClose()">
+                        Events
+                    </div>
+                </li>
+                <li>
+                    <div class="nav-links" ui-sref="request" data-ng-click="menuClose()">
+                        Request
+                    </div>
+                </li>
+                <li>
+                    <a class="nav-links" href="http://decal.innovativedesign.club">
+                        DeCal
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content" data-ui-view data-ng-click="sideClose()"></div>
+
+        <!-- Facebook Graph API -->
+        <div id="fb-root"></div>
+    </body>
+</html>

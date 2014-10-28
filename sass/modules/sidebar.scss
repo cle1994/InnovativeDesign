@@ -88,6 +88,7 @@
     }
 
     @media (max-width: 860px) {
+        @include box-shadow(0, 0, 8px, #aaaaaa);
         left: -250px;
         z-index: 10;
 

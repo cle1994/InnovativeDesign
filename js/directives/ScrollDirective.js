@@ -3,7 +3,6 @@ app.directive('scroll', ['$window', function($window) {
         restrict: 'A',
         link: function(scope, element, attributes) {
             angular.element($window).bind('scroll', function() {
-                console.log('hello');
                 if (this.pageYOffset >= 50) {
                     scope.changeScroll = true;
                 } else {

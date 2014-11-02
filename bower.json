@@ -5,6 +5,7 @@
     "angular": "latest",
     "angular-touch": "latest",
     "angular-ui-router": "latest",
-    "angular-animate": "latest"
+    "angular-animate": "latest",
+    "angular-facebook": "latest"
   }
 }

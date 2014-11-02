@@ -1,10 +1,10 @@
-var app = angular.module('innovativeDesign', ['ui.router', 'ngTouch', 'ngAnimate']);
+var app = angular.module('innovativeDesign', ['ui.router', 'ngTouch', 'ngAnimate', 'facebook']);
 
 app.run(['$rootScope', '$state', '$location', '$window', function ($rootScope, $state, $location, $window) {
     $rootScope.$state = $state;
 }]);
 
-app.config(["$stateProvider", "$urlRouterProvider", "$locationProvider", function($stateProvider, $urlRouterProvider, $locationProvider) {
+app.config(["$stateProvider", "$urlRouterProvider", "$locationProvider", 'FacebookProvider', function($stateProvider, $urlRouterProvider, $locationProvider, FacebookProvider) {
     $locationProvider.html5Mode(true);
     $urlRouterProvider.otherwise("/");
 
@@ -30,7 +30,7 @@ app.config(["$stateProvider", "$urlRouterProvider", "$locationProvider", functio
                 pageTitle: 'Contact InnoD'
             }
         })
-        .state('events', {
+        .state('event', {
             url: '/events',
             templateUrl: './views/events.html',
             data: {
@@ -44,4 +44,6 @@ app.config(["$stateProvider", "$urlRouterProvider", "$locationProvider", functio
                 pageTitle: 'Request InnoD'
             }
         });
+
+    FacebookProvider.init('1463799333875095');
 }]);

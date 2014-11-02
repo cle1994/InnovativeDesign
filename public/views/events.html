@@ -1,1 +1,25 @@
 <!-- Events Page -->
+
+<div class="events-container" data-ng-controller="EventsController">
+    <a data-ng-repeat="event in fbEvents" ng-href="http://facebook.com/{{ event.id }}">
+        <div class="card">
+            <div class="img-wrapper">
+                <img ng-src="{{ fbCovers[$index] }}" alt="">
+            </div>
+            <div class="info">
+                <p class="type">
+                    {{ event.name }}
+                </p>
+                <p class="type">
+                    {{ event.start_time | timeFilter }}
+                </p>
+                <p class="type">
+                    {{ event.start_time | dateFilter }}
+                </p>
+                <p class="type">
+                    {{ event.location }}
+                </p>
+            </div>
+        </div>
+    </a>
+</div>

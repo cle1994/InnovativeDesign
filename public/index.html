@@ -14,16 +14,17 @@
         <title changeTitle></title>
         <link rel="icon" type="image/png" href="../img/icon/favicon.png">
 
-        <!-- CSS -->
+        <!-- Innovative Design's CSS -->
         <link rel="stylesheet" type="text/css" href="css/application.css">
 
-        <!-- Angular -->
+        <!-- Angular Libs -->
         <script src="./libs/js/angular.min.js"></script>
         <script src="./libs/js/angular-ui-router.min.js"></script>
         <script src="./libs/js/angular-touch.min.js"></script>
         <script src="./libs/js/angular-animate.min.js"></script>
+        <script src="./libs/js/angular-facebook.js"></script>
 
-        <!-- ANGULAR CUSTOM -->
+        <!-- Innovative Design's Angular -->
         <script src="./js/app.min.js"></script>
     </head>
     <body id="ng-app" data-ng-app="innovativeDesign" data-ng-controller="MainController" scroll>
@@ -47,27 +48,27 @@
             </div>
             <ul class="sidebar-nav vert-center">
                 <li>
-                    <div class="nav-links" ui-sref="home" data-ng-click="menuClose()">
+                    <div class="nav-links" ui-sref="home" data-ng-click="sideClose()">
                         Home
                     </div>
                 </li>
                 <li>
-                    <div class="nav-links" ui-sref="about" data-ng-click="menuClose()">
+                    <div class="nav-links" ui-sref="about" data-ng-click="sideClose()">
                         About
                     </div>
                 </li>
                 <li>
-                    <div class="nav-links" ui-sref="contact" data-ng-click="menuClose()">
+                    <div class="nav-links" ui-sref="contact" data-ng-click="sideClose()">
                         Contact
                     </div>
                 </li>
                 <li>
-                    <div class="nav-links" ui-sref="events" data-ng-click="menuClose()">
+                    <div class="nav-links" ui-sref="event" data-ng-click="sideClose()">
                         Events
                     </div>
                 </li>
                 <li>
-                    <div class="nav-links" ui-sref="request" data-ng-click="menuClose()">
+                    <div class="nav-links" ui-sref="request" data-ng-click="sideClose()">
                         Request
                     </div>
                 </li>

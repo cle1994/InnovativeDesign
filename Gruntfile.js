@@ -7,6 +7,9 @@ module.exports = function(grunt) {
     },
 
     uglify: {
+      options: {
+        sourceMap: true
+      },
       build: {
         files: {
           'public/js/app.min.js': ['js/**/*.js', 'js/*.js']

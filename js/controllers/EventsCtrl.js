@@ -10,7 +10,6 @@ app.controller('EventsController', ['$scope', 'Facebook', function($scope, Faceb
             var cover = '';
 
             if (response.cover) {
-                console.log(response);
                 cover = response.cover.source;
             } else {
                 cover = './img/icon/innovative-' + randomNum(1, 4) + '.png';

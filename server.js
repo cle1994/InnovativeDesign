@@ -5,7 +5,6 @@ var express         = require('express');
 // var mongoose        = require('mongoose');
 var bodyParser      = require('body-parser');
 var methodOverride  = require('method-override');
-var sass            = require('node-sass');
 
 var app = express();
 
@@ -20,14 +19,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(express.static(__dirname + '/public'));
-
-// sass --------------
-app.use(sass.middleware({
-  src: __dirname + '/public/sass',
-  dest: __dirname + '/public',
-  debug: true,
-  outputStyle: 'compressed'
-}));
 
 // routes ------------
 require('./app/routes')(app);

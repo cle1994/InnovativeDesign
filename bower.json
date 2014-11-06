@@ -1,14 +1,11 @@
 {
-  "name": "InnovativeNode-Angular",
-  "version": "1.0.0",
+  "name": "InnovativeDesign",
+  "version": "2.0.0",
   "dependencies": {
-    "jquery": "latest",
-    "bootstrap": "latest",
-    "animate.css": "latest",
     "angular": "latest",
-    "angular-route": "latest",
     "angular-touch": "latest",
-    "moment": "latest",
-    "font-awesome": "4.1.x"
+    "angular-ui-router": "latest",
+    "angular-animate": "latest",
+    "angular-facebook": "latest"
   }
 }

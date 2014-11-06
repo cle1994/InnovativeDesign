@@ -1,65 +1,60 @@
-<!-- public/views/about.html -->
-<!-- Innovative Design -->
-<!-- by Christian Le -->
-<!-- http://christianle.com -->
-<!-- Github: cle1994  -->
-<!-- LinkedIn: http://www.linkedin.com/in/christianle94/ -->
-
-<div class="about-wrapper" data-ng-controller="AboutController">
-  <header>
-    Innovative Design is a family of designers, photographers, web developers, and videographers at the University of California, Berkeley. We are creative individuals who are continuously evolving by collaborating, inspiring and educating one another. It is through our different artistic tools and talents that we are able to create novel photography, designs, videos, and websites for our peers and professional clients.
-  </header>
-
-  <ul class="fill-container">
-    <li class="fill-box fill-box-divider"></li>
-
-    <li class="fill-box fill-box-1">
-      <h2>Blue Tier</h2>
-      <p>
-        Blue Tier is a group of intermediate to advanced designers that offers design services to off-campus groups such as businesses and restaurants. By providing design consulting and services, designers learn to push creativity in a fast-paced and professional environment and build a close and coherent team relationship.
-      </p>
-    </li> <!-- fill-box -->
-
-    <li class="fill-box fill-box-2">
-      <h2>Gold Tier</h2>
-      <p>
-        Looking for an opportunity to take your creativity to the next level and hone your design skills? Gold Tier offers graphic design education and experience for beginner to intermediate designers through providing free design services to on-campus groups. Learn how to design flyers, t-shirts, logos, and more in a friendly team environment while also learning the design process and building your portfolio!
-      </p>
-    </li> <!-- fill-box -->
-
-    <li class="fill-box fill-box-3">
-      <h2>Photo Tier</h2>
-      <p>
-        Join Photo Tier for hands-on experience in shooting professional headshots, event photography, stock photos and more. Members gain knowledge through weekly lessons in subjects such as photo-retouching in Photoshop and Lightroom, camera techniques, and studio photography. Develop your artistic style and contribute to a team of diverse skill sets. Join photo tier for experiences in almost every type of photography.
-      </p>
-    </li> <!-- fill-box -->
-
-    <li class="fill-box fill-box-4">
-      <h2>Web Tier</h2>
-      <p>
-        Developer with an eye for design? Develop layout mockups and build websites with Web Tier! Through hands-on experience in a fast-paced environment, tier members learn new skills and put existing knowledge to use. We work for clients that are in need of technical help in modernizing their websites. We’re a team of full-stack engineers with specialized areas. We do it all.
-      </p>
-    </li> <!-- fill-box -->
-
-    <li class="fill-box fill-box-5">
-      <h2>Video Tier</h2>
-      <p>
-        Video Tier is our newest tier — compose and edit short films and promotional videos for Cal organizations! Tier members are able to gain experience and knowledge through exploring videography in a small group of people.
-      </p>
-    </li> <!-- fill-box -->
-
-    <li class="fill-box fill-box-6">
-      <h2>Marketing Tier</h2>
-      <p>
-        Marketing Tier is Innovative Design’s in-house Marketing Tier. If you’re interested in contributing to the brand identity of Innovative Design, considering joining this tier. Plan and execute creative marketing campaigns and let your ideas come to life!
-      </p>
-    </li> <!-- fill-box -->
-
-    <li class="fill-box fill-box-divider"></li>
-  </ul> <!-- fill-boxs -->
-  <div class="foot">
-    <div class="copyright">
-      &#169;&nbsp;Innovative&nbsp;Design,&nbsp;2014 All rights reserved.
+<!-- About Page -->
+<div class="about-container" data-ng-class="{ blue : changeColor == 'blue', red : changeColor == 'red', gold :  changeColor == 'gold', black : changeColor == 'black' }">
+    <div class="header">
+        Innovative Design is a family of designers, photographers, web developers, and videographers at the University of California, Berkeley. We are creative individuals who are continuously evolving by collaborating, inspiring and educating one another. It is through our different artistic tools and talents that we are able to create novel photography, designs, videos, and websites for our peers and professional clients.
     </div>
-  </div>
+
+    <ul class="fill-container" color>
+        <li class="fill-box fill-box-divider"></li>
+
+        <li class="fill-box fill-box-1">
+            <h2>Blue Tier</h2>
+            <p>
+                Blue Tier is a group of intermediate to advanced designers that offers design services to off-campus groups such as businesses and restaurants. By providing design consulting and services, designers learn to push creativity in a fast-paced and professional environment and build a close and coherent team relationship.
+            </p>
+        </li> <!-- fill-box -->
+
+        <li class="fill-box fill-box-2">
+            <h2>Gold Tier</h2>
+            <p>
+                Looking for an opportunity to take your creativity to the next level and hone your design skills? Gold Tier offers graphic design education and experience for beginner to intermediate designers through providing free design services to on-campus groups. Learn how to design flyers, t-shirts, logos, and more in a friendly team environment while also learning the design process and building your portfolio!
+            </p>
+        </li> <!-- fill-box -->
+
+        <li class="fill-box fill-box-3">
+            <h2>Photo Tier</h2>
+            <p>
+                Join Photo Tier for hands-on experience in shooting professional headshots, event photography, stock photos and more. Members gain knowledge through weekly lessons in subjects such as photo-retouching in Photoshop and Lightroom, camera techniques, and studio photography. Develop your artistic style and contribute to a team of diverse skill sets. Join photo tier for experiences in almost every type of photography.
+            </p>
+        </li> <!-- fill-box -->
+
+        <li class="fill-box fill-box-4">
+            <h2>Web Tier</h2>
+            <p>
+                Developer with an eye for design? Develop layout mockups and build websites with Web Tier! Through hands-on experience in a fast-paced environment, tier members learn new skills and put existing knowledge to use. We work for clients that are in need of technical help in modernizing their websites. We’re a team of full-stack engineers with specialized areas. We do it all.
+            </p>
+        </li> <!-- fill-box -->
+
+        <li class="fill-box fill-box-5">
+            <h2>Video Tier</h2>
+            <p>
+                Video Tier is our newest tier — compose and edit short films and promotional videos for Cal organizations! Tier members are able to gain experience and knowledge through exploring videography in a small group of people.
+            </p>
+        </li> <!-- fill-box -->
+
+        <li class="fill-box fill-box-6">
+            <h2>Marketing Tier</h2>
+            <p>
+                Marketing Tier is Innovative Design’s in-house Marketing Tier. If you’re interested in contributing to the brand identity of Innovative Design, considering joining this tier. Plan and execute creative marketing campaigns and let your ideas come to life!
+            </p>
+        </li> <!-- fill-box -->
+
+        <li class="fill-box fill-box-divider"></li>
+    </ul> <!-- fill-container -->
+
+    <div class="foot">
+        <div class="copyright">
+            &#169;&nbsp;Innovative&nbsp;Design,&nbsp;2014 All rights reserved.
+        </div>
+    </div>
 </div>

@@ -1,13 +1,21 @@
 {
-  "name" : "InnovativeNode",
-  "main" : "server.js",
-  "author" : "Christian Le - cle1994",
-  "dependencies" : {
-    "express" : "~4.5.1",
-    "body-parser" : "~1.4.2",
-    "method-override" : "~2.0.2"
+  "name": "InnovativeDesign",
+  "version": "2.0.0",
+  "main": "server.js",
+  "dependencies": {
+    "express": "latest"
   },
-  "engines" : {
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-concurrent": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-sass": "^0.8.1",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-nodemon": "latest"
+  },
+  "private": true,
+  "engines": {
     "node": "0.10.x"
   }
 }

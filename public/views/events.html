@@ -1,29 +1,25 @@
-<!-- public/views/events.html -->
-<!-- Innovative Design -->
-<!-- by Christian Le -->
-<!-- http://christianle.com -->
-<!-- Github: cle1994  -->
-<!-- LinkedIn: http://www.linkedin.com/in/christianle94/ -->
+<!-- Events Page -->
 
-<div class="events-container" data-ng-controller="EventController">
-  <div class="container-fluid">
-    <div class="col-md-8 col-md-offset-2" data-ng-repeat="event in events">
-      <a href="http://facebook.com/{{ event.id }}" target="_blank">
-        <div class="event-card">
-          <div class="event-image-wrapper">
-            <img class="event-image" src="{{ covers[$index] }}" alt="">
-          </div>
-          <div class="event-text">
-              {{ event.name }}
-              <br>
-              {{ event.start_time | timeFilter }}
-              <br>
-              {{ event.start_time | dateFilter }}
-              <br>
-              {{ event.location }}
-          </div>
+<div class="events-container" data-ng-controller="EventsController">
+    <a data-ng-repeat="event in fbEvents" ng-href="http://facebook.com/{{ event.id }}">
+        <div class="card">
+            <div class="img-wrapper">
+                <img ng-src="{{ fbCovers[$index] }}" alt="">
+            </div>
+            <div class="info">
+                <p class="type">
+                    {{ event.name }}
+                </p>
+                <p class="type">
+                    {{ event.start_time | timeFilter }}
+                </p>
+                <p class="type">
+                    {{ event.start_time | dateFilter }}
+                </p>
+                <p class="type">
+                    {{ event.location }}
+                </p>
+            </div>
         </div>
-      </div>
     </a>
-  </div>
 </div>

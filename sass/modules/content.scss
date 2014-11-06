@@ -1,0 +1,14 @@
+// Content Wrapper
+
+.content {
+    position: relative;
+    width: calc(100% - 250px);
+    margin-left: 250px;
+    background: #ffffff;
+    z-index: 1;
+
+    @media (max-width: 860px) {
+        width: 100%;
+        margin-left: 0;
+    }
+}

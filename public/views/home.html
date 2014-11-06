@@ -1,67 +1,33 @@
-<!-- public/views/home.html -->
-<!-- Innovative Design -->
-<!-- by Christian Le -->
-<!-- http://christianle.com -->
-<!-- Github: cle1994  -->
-<!-- LinkedIn: http://www.linkedin.com/in/christianle94/ -->
+<!-- Home Page -->
 
-<div class="home-container" data-ng-controller="HomeController">
-  <section class="logo-wrapper">
-    <div class="logo-vert">
-      <div class="logo-img">
-        <img src="img/innovative.svg" alt="">
-      </div>
-      <div class="animation-wrapper">
-        <div class="typewriter">
-          <span class="type">
-            design<span>&#124;</span>
-          </span>
-          <span class="type">
-            photography<span>&#124;</span>
-          </span>
-          <span class="type">
-            education<span>&#124;</span>
-          </span>
-          <span class="type">
-            web&nbsp;design<span>&#124;</span>
-          </span>
-          <span class="type">
-            videography<span>&#124;</span>
-          </span>
-          <span class="type">
-            design<span>&#124;</span>
-          </span>
+<div class="home-container">
+    <section class="logo-wrapper">
+        <div class="logo-vert">
+            <div class="logo-img">
+                <img src="./img/icon/innovative.svg" alt="">
+            </div>
+            <div class="animation-wrapper">
+                <div class="typewriter">
+                    <span class="type">
+                        design<span>&#124;</span>
+                    </span>
+                    <span class="type">
+                        photography<span>&#124;</span>
+                    </span>
+                    <span class="type">
+                        education<span>&#124;</span>
+                    </span>
+                    <span class="type">
+                        web&nbsp;design<span>&#124;</span>
+                    </span>
+                    <span class="type">
+                        videography<span>&#124;</span>
+                    </span>
+                    <span class="type">
+                        design<span>&#124;</span>
+                    </span>
+                </div>
+            </div>
         </div>
-      </div>
-  </section>
-  <div class="pager scroll-down" data-ng-click="scrollPortfolio()">
-    <div class="bounce-wrapper">
-      <i class="fa fa-angle-down arrow-down"></i>
-    </div>
-  </div>
-
-  <div class="portfolio col-lg-12 no-padding">
-    <div class="image-container container-fluid">
-      <div data-ng-repeat="image in data" class="hover center-col col-lg-{{ image[2][0] }} col-md-{{ image[2][1] }}" data-ng-show="{{ image[1] }}" data-ng-click="fullImage($index)">
-        <div class="background" style="background: url({{ image[0] }});"></div>
-      </div>
-    </div>
-    <div class="footer"></div>
-  </div>
-
-  <div class="full-image" data-ng-click="close()" data-ng-show="popup">
-    <div class="middle">
-      <div class="popup-image">
-        <div class="image-wrapper">
-          <img src="{{ data[ind][0] }}" alt="">
-          <div class="x-close">
-            <span class="x x1"></span>
-            <span class="x x2"></span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  </div>
+    </section>
 </div>

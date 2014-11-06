@@ -1,0 +1,67 @@
+// Events Page
+
+.events-container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    @media (max-width: 860px) {
+        padding-top: 100px;
+    }
+
+    a {
+        text-decoration: none;
+
+        .card {
+            @include box-shadow(0, 0, 5px, lighten($primary-black, 60%));
+            width: 70%;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+
+            -webkit-transition: box-shadow 0.15s;
+            -moz-transition: box-shadow 0.15s;
+            -ms-transition: box-shadow 0.15s;
+            -o-transition: box-shadow 0.15s;
+            transition: box-shadow 0.15s;
+
+            @media (max-width: 1080px) {
+                width: 90%;
+            }
+
+            @media (max-width: 860px) {
+                width: 75%;
+            }
+
+            @media (max-width: 700px) {
+                width: 82.5%;
+            }
+
+            @media (max-width: 600px) {
+                width: 90%;
+            }
+
+            .img-wrapper {
+                width: 100%;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .info {
+                padding: 10px;
+                text-align: left;
+
+                .type {
+                    @include innod-font();
+                    color: lighten($primary-black, 30%);
+                    margin-top: 6px;
+                    margin-bottom: 6px;
+                }
+            }
+
+            &:hover {
+                @include box-shadow(0, 0, 6px, lighten($primary-black, 50%));
+            }
+        }   
+    }
+}

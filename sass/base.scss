@@ -1,0 +1,33 @@
+// Base
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+
+*,
+*:after,
+*:before {
+    @include box-sizing(border-box);
+    @include innod-font();
+    position: relative;
+    font-weight: light;
+    color: $primary-black;
+    padding: 0;
+    margin: 0;
+    z-index: 1;
+}
+
+html, body {
+    @include innod-font();
+    position: relative;
+    height: 100%;
+    font-weight: light;
+    color: $primary-black;
+    z-index: 1;
+}
+
+.cf {
+    @include cf();
+}
+
+.vert-center {
+    @include vertical-align;
+}

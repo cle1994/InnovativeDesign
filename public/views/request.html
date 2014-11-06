@@ -29,9 +29,6 @@
         </div>
     </div>
     <form ng-submit="send()" class="request-form" data-ng-hide="!typeSelected || submitted">
-        <div class="title">
-            {{ typeTitle }}
-        </div>
         <div class="section">
             <label for="org">
                 Organization Name
@@ -83,13 +80,7 @@
             </label>
             <input id="date" type="text" data-ng-model="date" required placeholder="11/15/2014">
         </div>
-        <div class="section" data-ng-show="typeTitle == 'Photography' || typeTitle == 'Videography'">
-            <label for="time">
-                If your request is for an event, please specify the hours.
-            </label>
-            <input id="time" type="text" data-ng-model="time" placeholder="6pm - 8pm">
-        </div>
-        <div class="section" data-ng-show="typeTitle == 'Design'">
+        <div class="section" data-ng-show="service == 'Design'">
             <label for="sketch">
                 If you want, please include a link to design sketches or references.
             </label>

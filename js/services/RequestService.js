@@ -1,7 +1,7 @@
 app.factory('RequestService', ['$http', function($http) {
     return {
-        send: function(requestData) {
-            return $http.post('http://api.innovativedesign.club/api/requests', requestData);
+        send: function(request) {
+            return $http.get('http://api.innovativedesign.club/api/requests/', request);
         }
     };
 }]);

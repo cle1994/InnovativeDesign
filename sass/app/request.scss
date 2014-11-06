@@ -295,6 +295,24 @@
             }
         }
     }
+
+    .closeRequest {
+        @include vertical-align();
+        top: 45%;
+        padding: 60px;
+
+        p {
+            @include innod-font();
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 26px;
+            color: lighten($primary-black, 25%);
+        }
+
+        p.big {
+            font-size: 22px;
+        }
+    }
 }
 
 @include keyframes(pulsate) {

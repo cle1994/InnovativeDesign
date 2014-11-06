@@ -2,6 +2,9 @@ var app = angular.module('innovativeDesign', ['ui.router', 'ngTouch', 'ngAnimate
 
 app.run(['$rootScope', '$state', '$location', '$window', function ($rootScope, $state, $location, $window) {
     $rootScope.$state = $state;
+    $rootScope.$on('$viewContentLoaded',function(){
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
+    });
 }]);
 
 app.config(["$stateProvider", "$urlRouterProvider", "$locationProvider", 'FacebookProvider', function($stateProvider, $urlRouterProvider, $locationProvider, FacebookProvider) {

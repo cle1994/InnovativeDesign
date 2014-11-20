@@ -29,6 +29,7 @@
 
         .logo-vert {
             @include vertical-align;
+            top: 40%;
 
             .logo-img {
                 width: 100%;
@@ -103,6 +104,34 @@
                         }
                     }
                 }
+            }
+        }
+    }
+
+    .officer {
+        position: fixed;
+        bottom: 80px;
+        width: calc(100% - 250px);
+        text-align: center;
+
+        @media (max-width:860px) {
+            width: calc(100%);
+        }
+
+        a {
+            @include innod-font();
+            font-size: 20px;
+            font-weight: light;
+            text-decoration: none;
+            color: #999999;
+
+            -webkit-transition: color 0.15s;
+            -moz-transition: color 0.15s;
+            -o-transition: color 0.15s;
+            transition: color 0.15s;
+
+            &:hover {
+                color: $primary-blue;
             }
         }
     }

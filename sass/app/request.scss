@@ -32,6 +32,12 @@
             color: lighten($primary-black, 25%);
         }
 
+        .small {
+            font-size: 14px;
+            text-align: center;
+            margin: 20px 20px;
+        }
+
         .select {
             width: 80%;
             margin: 0 auto;

@@ -48,7 +48,7 @@ app.controller('RequestController', ['$scope', '$state', '$stateParams', '$timeo
 
         $http({
                 method: 'post',
-                url: 'https://script.google.com/macros/s/AKfycbzr86BBj3C_i8m2dm_Erdsy7-T-afJAdd4WcLDP8uKWVjOoYTFg/exec',
+                url: 'https://script.google.com/macros/s/AKfycbxdojPHoUa20lgOmGHn7P1hRlruqY8XBtUgoXwgXkSehIwFs9ro/exec',
                 params: dict
             })
             .success(function() {

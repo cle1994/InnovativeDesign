@@ -4,6 +4,8 @@ app.controller('RequestController', ['$scope', '$state', '$stateParams', '$timeo
     $scope.done = false;
     $scope.typeSelected = false;
     $scope.dateText = 'Proposed Deadline';
+    $scope.infoText = 'Additional Information';
+    $scope.infoPlaceholder = 'Any additional information';
     $scope.response = 'We\'ve received your request! Look for an email from our VP of Design Services soon.';
     $scope.timer = 10;
 
@@ -12,7 +14,9 @@ app.controller('RequestController', ['$scope', '$state', '$stateParams', '$timeo
         $scope.typeSelected = true;
 
         if (serviceType === 'Photography' || serviceType === 'Videography') {
-            $scope.dateText = 'Date and Time of when you want your shoot';
+            $scope.dateText = 'Proposed time and location of your shoot';
+            $scope.infoText = 'Request details';
+            $scope.infoPlaceholder = 'Please describe your request in detail here. What type of work do you need? For example, headshots, portraits, event photography, etc. Link sample images if necessary.';
         }
     };
 
@@ -41,26 +45,31 @@ app.controller('RequestController', ['$scope', '$state', '$stateParams', '$timeo
             orgInfo: $scope.orgInfo,
             addInfo: $scope.addInfo,
             date: $scope.date,
-            sketch: $scope.sketch
+            sketch: $scope.sketch,
+            eventDesc: $scope.eventDesc
         };
 
         $scope.submitted = true;
 
+        var errorf = function() {
+            $scope.done = true;
+            $scope.isError = true;
+            $scope.timeRefresh();
+            $scope.response = 'We\'re sorry but there was a problem the request. Please try again!';
+        };
+
+        var successf = function() {
+            $scope.done = true;
+            $scope.timeRefresh();
+        };
+
         $http({
                 method: 'post',
-                url: 'https://script.google.com/macros/s/AKfycbxdojPHoUa20lgOmGHn7P1hRlruqY8XBtUgoXwgXkSehIwFs9ro/exec',
+                url: $scope.service !== 'Photography' ? 'https://script.google.com/macros/s/AKfycbxdojPHoUa20lgOmGHn7P1hRlruqY8XBtUgoXwgXkSehIwFs9ro/exec' : 'https://script.google.com/macros/s/AKfycbxdmUKA9w4RODF3R45d2sYMzDVP8xNSxgEbAJxw-o5nu1kMRmE/exec',
                 params: dict
             })
-            .success(function() {
-                $scope.done = true;
-                $scope.timeRefresh();
-            })
-            .error(function() {
-                $scope.done = true;
-                $scope.isError = true;
-                $scope.timeRefresh();
-                $scope.response = 'We\'re sorry but there was a problem the request. Please try again!';
-            });
+            .success(successf)
+            .error(errorf);
     };
 
   // $scope.googleSheet = function() {
@@ -107,7 +116,7 @@ app.controller('RequestController', ['$scope', '$state', '$stateParams', '$timeo
   //       }
   //   };
 
-    
+
 
   //   $scope.send = function() {
   //       var newRequest = {

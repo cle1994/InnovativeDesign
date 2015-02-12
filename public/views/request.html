@@ -71,21 +71,27 @@
         </div>
         <div class="section">
             <label for="addinfo">
-                Additional Information
+                {{ infoText }}
             </label>
-            <textarea name="addinfo" id="addinfo" rows="10" placeholder="Any additional information" required data-ng-model="addInfo"></textarea>
+            <textarea name="addinfo" id="addinfo" rows="10" placeholder="{{ infoPlaceholder }}" required data-ng-model="addInfo"></textarea>
         </div>
         <div class="section">
             <label for="date">
                 {{ dateText }}
             </label>
-            <input id="date" type="text" data-ng-model="date" required placeholder="11/15/2014">
+            <input id="date" type="text" data-ng-model="date" required placeholder="01/31/2015">
         </div>
         <div class="section" data-ng-show="service == 'Design'">
             <label for="sketch">
                 If you want, please include a link to design sketches or references.
             </label>
             <input id="sketch" type="text" data-ng-model="sketch" placeholder="http://innovativedesign.club">
+        </div>
+        <div class="section" data-ng-show="service == 'Photography'">
+            <label for="eventDesc">
+                Event information
+            </label>
+            <textarea name="eventDesc" id="eventDesc" rows="10" data-ng-model="eventDesc" placeholder="List your proposed locations and times to meet, including event duration if applicable. In some cases we can assist with choosing locations for events like portraiture."></textarea>
         </div>
         <div class="section">
             <input class="submit" type="submit" id="submit" value="Submit">

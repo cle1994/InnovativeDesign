@@ -3,9 +3,9 @@ app.controller('RequestController', ['$scope', '$state', '$stateParams', '$timeo
     $scope.isError = false;
     $scope.done = false;
     $scope.typeSelected = false;
-    $scope.dateText = 'Proposed Deadline';
-    $scope.infoText = 'Additional Information';
-    $scope.infoPlaceholder = 'Any additional information';
+    $scope.dateText = 'Proposed Deadline - please give us at least 2 weeks advance notice!';
+    $scope.infoText = 'Describe your project';
+    $scope.infoPlaceholder = 'Any color preferences? Do you want a t-shirt, logo, poster? What do you want in your design?';
     $scope.response = 'We\'ve received your request! Look for an email from our VP of Design Services soon.';
     $scope.timer = 10;
 

@@ -17,6 +17,7 @@ app.controller('RequestController', ['$scope', '$state', '$stateParams', '$timeo
             $scope.dateText = 'Proposed time and location of your shoot';
             $scope.infoText = 'Request details';
             $scope.infoPlaceholder = 'Please describe your request in detail here. What type of work do you need? For example, headshots, portraits, event photography, etc. Link sample images if necessary.';
+            $scope.response = 'We\'ve received your request! Look for an email from our VP of Photo Services soon.';
         }
     };
 

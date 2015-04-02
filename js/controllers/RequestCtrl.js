@@ -65,9 +65,9 @@ app.controller('RequestController', ['$scope', '$state', '$stateParams', '$timeo
         };
 
         $http({
-                method: 'POST',
+                method: 'post',
                 url: $scope.service !== 'Photography' ? 'https://script.google.com/macros/s/AKfycbxdojPHoUa20lgOmGHn7P1hRlruqY8XBtUgoXwgXkSehIwFs9ro/exec' : 'https://script.google.com/macros/s/AKfycbxdmUKA9w4RODF3R45d2sYMzDVP8xNSxgEbAJxw-o5nu1kMRmE/exec',
-                data: dict
+                params: dict
             })
             .success(successf)
             .error(errorf);

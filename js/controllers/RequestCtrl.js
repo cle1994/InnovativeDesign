@@ -1,4 +1,13 @@
 app.controller('RequestController', ['$scope', '$state', '$stateParams', '$timeout', '$http', function($scope, $state, $stateParams, $timeout, $http) {
+    // safari bugs out on CORS requests, even though they go through
+    // a 405 response comes from google, whereas other browsers get 302
+    // and ofc, XMLHTTPRequest complains. more info here: https://bugs.webkit.org/show_bug.cgi?id=136081
+    var is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
+    var is_safari = navigator.userAgent.indexOf("Safari") > -1;
+    if ((is_chrome)&&(is_safari)) {is_safari=false;}
+    // if (is_safari) { alert(is_safari); }
+
+
     $scope.submitted = false;
     $scope.isError = false;
     $scope.done = false;
@@ -63,6 +72,12 @@ app.controller('RequestController', ['$scope', '$state', '$stateParams', '$timeo
             $scope.done = true;
             $scope.timeRefresh();
         };
+
+        if (is_safari === true) {
+            // pls forgive me
+            errorf = successf;
+            $scope.response += " If you don't receive a response within a few days, feel free to contact us at innovativedesignatcal@gmail.com!";
+        }
 
         $http({
                 method: 'post',

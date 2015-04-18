@@ -1,116 +1,15 @@
 <!-- Request Page -->
 
 <div class="request-container" data-ng-controller="RequestController">
-    <div class="type" data-ng-hide="typeSelected">
-        <div class="title">
-            Which type of service would you like to request?
-        </div>
-        <div class="select cf">
-            <div class="border design" data-ng-click="select('Design')">
-                <div class="square">
-                    <img src="./img/icon/request/design.png" alt="">
-                </div>
-            </div>
-            <div class="border photo" data-ng-click="select('Photography')">
-                <div class="square">
-                    <img src="./img/icon/request/photo.png" alt="">
-                </div>
-            </div>
-            <div class="border web" data-ng-click="select('Web Design')">
-                <div class="square">
-                    <img src="./img/icon/request/web.png" alt="">
-                </div>
-            </div>
-            <div class="border vid" data-ng-click="select('Videography')">
-                <div class="square">
-                    <img src="./img/icon/request/vid.png" alt="">
-                </div>
-            </div>
-        </div>
-        <p class="small">For Product Tier projects, email us directly at <a href="mailto:elizabethylin@gmail.com">elizabethylin@gmail.com</a>!</p>
-    </div>
-    <form ng-submit="send()" class="request-form" data-ng-hide="!typeSelected || submitted">
-        <div class="section">
-            <label for="org">
-                Organization Name
-            </label>
-            <input id="org" type="text" data-ng-model="organization" required placeholder="Innovative Design">
-        </div>
-        <div class="section">
-            <label for="campus">
-                On or Off Campus
-            </label>
-            <select name="campus" id="campus" required data-ng-model="campus">
-                <option value="Off Campus">Off Campus</option>
-                <option value="On Campus">On Campus</option>
-            </select>
-        </div>
-        <div class="section">
-            <label for="contact">
-                Contact Name
-            </label>
-            <input id="contact" type="text" data-ng-model="contact" required placeholder="First Last">
-        </div>
-        <div class="section">
-            <label for="number">
-                Phone Number
-            </label>
-            <input id="number" type="text" data-ng-model="number" required placeholder="(123)-123-1234">
-        </div>
-        <div class="section">
-            <label for="email">
-                Email
-            </label>
-            <input id="email" type="email" data-ng-model="email" required placeholder="innovativedesignatcal@gmail.com">
-        </div>
-        <div class="section">
-            <label for="orginfo">
-                Organization Information
-            </label>
-            <textarea name="orginfo" id="orginfo" rows="10" placeholder="Information about your organization" required data-ng-model="orgInfo"></textarea>
-        </div>
-        <div class="section">
-            <label for="addinfo">
-                {{ infoText }}
-            </label>
-            <textarea name="addinfo" id="addinfo" rows="10" placeholder="{{ infoPlaceholder }}" required data-ng-model="addInfo"></textarea>
-        </div>
-        <div class="section">
-            <label for="date">
-                {{ dateText }}
-            </label>
-            <input id="date" type="text" data-ng-model="date" required placeholder="01/31/2015">
-        </div>
-        <div class="section" data-ng-show="service == 'Design'">
-            <label for="sketch">
-                If you want, please include a link to design sketches or references.
-            </label>
-            <input id="sketch" type="text" data-ng-model="sketch" placeholder="http://innovativedesign.club">
-        </div>
-        <div class="section" data-ng-show="service == 'Photography'">
-            <label for="eventDesc">
-                Event information
-            </label>
-            <textarea name="eventDesc" id="eventDesc" rows="10" data-ng-model="eventDesc" placeholder="List your proposed locations and times to meet, including event duration if applicable. In some cases we can assist with choosing locations for events like portraiture."></textarea>
-        </div>
-        <div class="section">
-            <input class="submit" type="submit" id="submit" value="Submit">
-        </div>
-    </form>
-    <div class="sent" data-ng-show="submitted">
-        <div class="loading" data-ng-hide="done">
-            <div class="circle"></div>
-        </div>
-        <div class="done" data-ng-show="done">
-            <p class="response" data-ng-class="{ err: isError }">
-                {{ response }}
-            </p>
-            <p class="timer" data-ng-class="{ err: isError }">
-                Page will automatically redirect you in <span class="refresh" data-ng-click="refresh()">{{ timer }}</span> seconds.
-                <br>
-                <br>
-                Or you can click <span class="refresh" data-ng-click="refresh()">here</span>.
-            </p>
-        </div>
+    <div class="closeRequest">
+        <p class="big">Sorry but requests are now closed for the semester! We're busy finishing up our work for the semester.</p>
+        <br>
+        <p>Send your Design, Photography, Videography, and Web requests next semester!</p>
+        <br>
+        <br>
+        <p>
+            Sincerely,<br>
+            Innovative Design
+        </p>
     </div>
 </div>

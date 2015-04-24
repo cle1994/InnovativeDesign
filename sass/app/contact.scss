@@ -8,7 +8,6 @@
         .header {
             @include span(1);
             @include box-shadow(0, 0, 4px, #aaaaaa);
-            position: fixed;
             top: 0;
             height: 100px;
             padding-top: 8px;
